@@ -1,0 +1,189 @@
+@tailwind base;
+
+body {
+  cursor: none;
+  scrollbar-width: none; /* Firefox */
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none; /* IE and Edge */
+
+  @apply w-full h-full overflow-x-hidden overscroll-none font-core text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
+}
+
+@keyframes ticker-kf {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-160rem, 0, 0);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url('public/fonts/league/LeagueGothic-Condensed.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('public/fonts/aktiv/AktivGroteskCorp-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('public/fonts/aktiv/AktivGroteskCorp-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('public/fonts/aktiv/AktivGroteskCorp-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('public/fonts/aktiv/AktivGroteskCorp-MediumItalic.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@tailwind components;
+
+/*  //! GLOBAL !// */
+
+.paragraph {
+  @apply font-core text-lg lg:text-2xl 2xl:text-3xl;
+}
+
+.label {
+  @apply mb-2 lg:mb-4 2xl:mb-5 text-xs lg:text-base 2xl:text-lg font-bold uppercase;
+}
+
+.key {
+  @apply mr-0.5 lg:mr-1 2xl:mr-1.5 text-sm lg:text-lg 2xl:text-xl text-gray-400 dark:text-gray-700 transition-colors duration-300 ease-in-out;
+}
+
+.value {
+  @apply mr-2 lg:mr-4 text-sm lg:text-lg 2xl:text-xl text-gray-700 dark:text-gray-400 transition-colors duration-300 ease-in-out;
+}
+
+.custom-subheading {
+  @apply text-4xl lg:text-6xl 2xl:text-7xl font-bold uppercase;
+}
+
+.custom-card-title {
+  @apply font-bold text-2xl lg:text-5xl 2xl:text-6xl uppercase leading-none;
+}
+
+.custom-card-text {
+  @apply font-core text-base lg:text-xl 2xl:text-2xl leading-none text-gray-700 dark:text-gray-400 custom-animation;
+}
+
+.custom-container {
+  @apply px-4 lg:px-12 2xl:px-16;
+}
+
+.custom-padding {
+  @apply py-8 lg:py-12 2xl:py-16;
+}
+
+.custom-mt {
+  @apply mt-12 lg:mt-16 2xl:mt-24;
+}
+
+.custom-mb {
+  @apply mb-12 lg:mb-16 2xl:mb-24;
+}
+
+.custom-link {
+  @apply text-base lg:text-lg 2xl:text-xl text-gray-500 hover:text-red-400 custom-animation;
+}
+
+.custom-animation {
+  @apply transition duration-300 ease-in-out;
+}
+
+.cursor {
+  @apply hidden lg:block absolute top-0 left-0 w-8 h-8 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
+}
+
+.pointer {
+  @apply border-4 border-solid border-black dark:border-white !important;
+}
+
+.hovered {
+  @apply bg-transparent !important;
+  @apply w-14 h-14 border-4 border-solid border-red-400;
+}
+
+.nav-open {
+  @apply bg-black dark:bg-white;
+}
+
+/*  //!  !// */
+
+.about-row {
+  @apply px-1 py-4 lg:px-3 lg:py-6 2xl:px-4 2xl:py-7 font-core text-xs lg:text-base 2xl:text-lg break-words;
+}
+
+.filter-btn-off {
+  @apply text-gray-700 dark:text-gray-400;
+}
+
+.filter-btn-on {
+  @apply text-red-400;
+}
+
+.body-lock {
+  @apply overflow-y-hidden;
+}
+
+.slideshow-arrow {
+  top: calc(50% - 20px);
+
+  @apply absolute bg-white rounded-lg w-10 h-10 flex justify-center items-center select-none  text-xl z-50;
+}
+
+.expo-card {
+  flex: 0 0 40%;
+  max-width: 40%;
+
+  @apply relative p-6 h-96;
+}
+
+.player-wrapper {
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+
+  @apply relative;
+}
+
+.react-player {
+  @apply absolute top-0 left-0;
+}
+
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+
+.writing-mode-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+.text-orientation-mixed {
+  text-orientation: mixed;
+}
+
+/* Stop purging. */
