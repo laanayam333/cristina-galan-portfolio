@@ -19,8 +19,6 @@ const ProjectCard = ({ project }) => {
     }
   }, [animation, inView]);
 
-  console.log(JSON.stringify(project.cover_photo.dimensions, null, 2));
-
   return (
     <motion.div
       ref={contentRef}

@@ -16,8 +16,6 @@ const Gallery = ({ gallery, onCursor }) => {
     setSelected(key);
   };
 
-  console.log(JSON.stringify(selected, null, 2));
-
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
     triggerOnce: true
