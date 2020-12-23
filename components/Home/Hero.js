@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 import { parentVariants, childVariants } from '@/utils/framer';
 
-const HomeHero = ({ homePageData }) => {
+const Hero = ({ homePageData }) => {
   return (
     <motion.section
       className="flex flex-col h-screen justify-end space-y-12 lg:space-y- 2xl:space-y-16 overflow-hidden custom-container"
@@ -29,4 +29,4 @@ const HomeHero = ({ homePageData }) => {
   );
 };
 
-export default HomeHero;
+export default Hero;

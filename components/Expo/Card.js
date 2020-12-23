@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -30,14 +31,15 @@ const Card = ({ expo, onCursor }) => {
     >
       <Link href={`/expos/${expo.node._meta.uid}`}>
         <a>
-          <div
-            className="h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${expo.node.cover_photo.url})`
-            }}
-          >
+          <div className="relative h-full w-full">
+            <Image
+              className="relative object-center object-cover pointer-events-none"
+              src={expo.node.cover_photo.url}
+              layout="fill"
+            />
+
             <div
-              className="w-full h-full flex justify-start items-end p-2 lg:p-4 2xl:p-6 custom-card-title text-white hover:opacity-0 custom-animation"
+              className="relative w-full h-full z-99 flex justify-start items-end p-2 lg:p-4 2xl:p-6 custom-card-title text-white hover:opacity-0 custom-animation"
               style={{ backgroundColor: `${expo.node.card_color}` }}
             >
               {expo.node.location[0].text}

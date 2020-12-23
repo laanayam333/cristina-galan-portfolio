@@ -5,9 +5,9 @@ const HomeProjects = ({ displayedProjects, onCursor }) => {
     <section className="custom-container custom-mt">
       <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-24 2xl:gap-32">
         {displayedProjects &&
-          displayedProjects.map((project) => (
+          displayedProjects.map((project, index) => (
             <div
-              key={project.node._meta.slug}
+              key={index}
               onMouseEnter={() => onCursor('hovered')}
               onMouseLeave={onCursor}
             >
