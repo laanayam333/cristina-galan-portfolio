@@ -1,4 +1,3 @@
-const { transparent } = require('@tailwindcss/ui/colors');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
       black: colors.black,
       gray: colors.trueGray,
       red: colors.red,
-      transparent: transparent,
+      transparent: 'transparent',
       current: 'currentColor'
     },
 

@@ -33,9 +33,11 @@ const Card = ({ expo, onCursor }) => {
         <a>
           <div className="relative h-full w-full">
             <Image
-              className="relative object-center object-cover pointer-events-none"
+              className="relative"
               src={expo.node.cover_photo.url}
               layout="fill"
+              objectFit="cover"
+              quality={100}
             />
 
             <div

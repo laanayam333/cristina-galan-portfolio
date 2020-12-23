@@ -14,7 +14,7 @@ export const closeModalTransition = {
 
 const pageEasing = [0.87, 0, 0.13, 1];
 const pageTransition = {
-  duration: 0.6,
+  duration: 0.1,
   ease: pageEasing
 };
 
@@ -35,7 +35,7 @@ export const pageVariants = {
     transition: {
       ...pageTransition,
       when: 'beforeChildren',
-      staggerChildren: 0.5
+      staggerChildren: 0.1
     }
   }
 };

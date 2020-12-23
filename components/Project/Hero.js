@@ -10,10 +10,15 @@ const Hero = ({ data }) => {
       variants={parentVariants}
     >
       <Image
-        className="z-10 object-center object-cover pointer-events-none"
+        className="z-10"
         src={data.project.cover_photo.url}
         alt={data.project.cover_photo.alt}
+        objectFit="cover"
+        objectPosition="center"
         layout="fill"
+        quality={100}
+        priority
+        loading="eager"
       />
       <motion.h1
         className="z-99 font-heading text-8xl lg:text-11xl 2xl:text-12xl text-white uppercase whitespace-normal leading-none"

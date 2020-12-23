@@ -40,11 +40,12 @@ const Gallery = ({ gallery, onCursor }) => {
           {gallery.fields.map((elm, index) => (
             <div>
               <Image
-                className="object-cover"
                 key={index}
                 src={elm.photo.url}
                 alt={elm.photo.alt}
                 layout="responsive"
+                objectFit="cover"
+                quality={100}
                 width={elm.photo.dimensions.width}
                 height={elm.photo.dimensions.height}
                 onClick={() => handleModalToggle(index)}

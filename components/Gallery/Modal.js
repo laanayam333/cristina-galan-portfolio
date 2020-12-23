@@ -24,10 +24,11 @@ const Modal = ({
           onMouseLeave={onCursor}
         >
           <Image
-            className="object-contain"
             src={gallery.fields[selected].photo.url}
             alt={gallery.fields[selected].photo.alt}
             layout="fill"
+            objectFit="contain"
+            quality={100}
             onMouseEnter={() => onCursor('hovered')}
             onMouseLeave={onCursor}
           />

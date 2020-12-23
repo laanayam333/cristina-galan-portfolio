@@ -45,6 +45,7 @@ const HomeFooter = ({ onCursor }) => {
           onMouseLeave={onCursor}
           href="https://www.instagram.com/cristina_galan_vargas/?hl=en"
           target="_blank"
+          rel="noopener"
         >
           Instagram
         </a>
@@ -55,6 +56,7 @@ const HomeFooter = ({ onCursor }) => {
           onMouseLeave={onCursor}
           href="https://www.linkedin.com/in/cristina-gal%C3%A1n-vargas-b878b598/"
           target="_blank"
+          rel="noopener"
         >
           Linkedin
         </a>
@@ -65,6 +67,7 @@ const HomeFooter = ({ onCursor }) => {
           onMouseLeave={onCursor}
           href="https://vimeo.com/user52102497"
           target="_blank"
+          rel="noopener"
         >
           Vimeo
         </a>

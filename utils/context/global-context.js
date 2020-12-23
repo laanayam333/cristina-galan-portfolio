@@ -1,17 +1,18 @@
 import { createContext, useContext, useReducer } from 'react';
-import { parseCookies } from 'nookies';
+// // import { parseCookies } from 'nookies';
 
 //! DEFINE CTX
 
 const GlobalStateContext = createContext();
 const GlobalDispatchContext = createContext();
 
-const cookies = parseCookies();
+// // const cookies = parseCookies();
 
 //! INITIAL STATE
 
 const initialState = {
-  currentTheme: cookies.theme == null ? 'light' : cookies.theme,
+  // // currentTheme: cookies.theme == null ? 'light' : cookies.theme,
+  currentTheme: 'light',
   cursorType: false,
   cursorStyles: ['pointer', 'hovered']
 };

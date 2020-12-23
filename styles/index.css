@@ -28,6 +28,7 @@ body {
   src: url('public/fonts/league/LeagueGothic-Condensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -35,6 +36,7 @@ body {
   src: url('public/fonts/aktiv/AktivGroteskCorp-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -42,6 +44,7 @@ body {
   src: url('public/fonts/aktiv/AktivGroteskCorp-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
+  font-display: swap
 }
 
 @font-face {
@@ -49,6 +52,7 @@ body {
   src: url('public/fonts/aktiv/AktivGroteskCorp-Bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
+  font-display: swap
 }
 
 @font-face {
@@ -57,6 +61,7 @@ body {
     format('woff2');
   font-weight: 500;
   font-style: italic;
+  font-display: swap
 }
 
 @tailwind components;

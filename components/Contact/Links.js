@@ -35,6 +35,7 @@ const Links = ({ body, onCursor }) => {
             className="custom-link"
             href={link.primary.link.url}
             target="_blank"
+            rel="noopener"
           >
             {link.primary.name[0].text}
           </a>

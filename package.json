@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "@popmotion/popcorn": "^0.4.4",
-    "@tailwindcss/ui": "^0.7.2",
     "framer-motion": "^3.1.1",
-    "next": "^10.0.3",
+    "next": "^10.0.4",
     "nookies": "^2.5.0",
     "prismic-javascript": "3.0.2",
     "prismic-reactjs": "^1.3.3",
