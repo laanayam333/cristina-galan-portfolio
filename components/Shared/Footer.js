@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 
 import { scrollVariants } from '@/utils/framer';
 
+import BackIcon from '@/components/Icons/BackIcon';
+
 const Footer = ({ cta, slug, onCursor }) => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
@@ -28,11 +30,12 @@ const Footer = ({ cta, slug, onCursor }) => {
     >
       <Link href={slug}>
         <a
-          className="flex items-center space-x-4"
+          className="flex items-center space-x-2 lg:space-x-4 2xl:space-x-5"
           onMouseEnter={() => onCursor('hovered')}
           onMouseLeave={onCursor}
         >
-          <h4>{`<< ${cta}`}</h4>
+          <BackIcon />
+          <h4>{`${cta}`}</h4>
         </a>
       </Link>
     </motion.section>

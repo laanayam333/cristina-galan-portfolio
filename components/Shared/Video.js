@@ -22,15 +22,17 @@ const Video = ({ video }) => {
     <>
       {video && (
         <motion.section
-          className="custom-container custom-padding"
+          className="flex justify-center items-center w-screen h-full lg:h-screen custom-container custom-padding"
           ref={contentRef}
           initial="hidden"
           animate={animation}
           variants={scrollVariants}
         >
-          <div className="flex w-full h-full justify-center items-center">
-            <ReactPlayer url={video.primary.video_url.embed_url} />
-          </div>
+          <ReactPlayer
+            url={video.primary.video_url.embed_url}
+            width="100%"
+            height="100%"
+          />
         </motion.section>
       )}
     </>

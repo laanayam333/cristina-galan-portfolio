@@ -5,7 +5,7 @@ import { parentVariants, childVariants } from '@/utils/framer';
 const Hero = ({ homePageData }) => {
   return (
     <motion.section
-      className="flex flex-col h-screen justify-end space-y-12 lg:space-y- 2xl:space-y-16 overflow-hidden custom-container"
+      className="flex flex-col h-screen justify-end space-y-16 lg:space-y-20 2xl:space-y-24 overflow-hidden custom-container"
       variants={parentVariants}
     >
       <motion.h2

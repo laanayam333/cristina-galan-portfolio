@@ -45,25 +45,11 @@ module.exports = {
     },
 
     extend: {
-      inset: {
-        '-4': '-1rem',
-        '-80': '-20rem'
-      },
       zIndex: {
         '-1': '-1',
         99: 99,
         100: 100,
         999: 999
-      },
-      spacing: {
-        '90vw': '90vw'
-      },
-      padding: {
-        '2/3': '66.66%'
-      },
-      cursor: {
-        'zoom-in': 'zoom-in',
-        'zoom-out': 'zoom-out'
       }
     }
   }

@@ -54,12 +54,10 @@ export default function ProjectPage({
 
       <Hero data={projectData} />
 
-      <section className="flex flex-col lg:flex-row-reverse custom-padding custom-container">
+      <section className="grid grid-cols-none grid-rows-3 lg:grid-cols-4 lg:grid-rows-none gap-x-0 gap-y-12 lg:gap-x-12 2xl:gap-x-14 custom-container custom-padding">
+        <Team projectData={projectData} team={team} />
+        <Info projectData={projectData} agency={agency} client={client} />
         <Content projectData={projectData} />
-        <div className="flex flex-col w-full lg:w-1/2 lg:flex-row custom-mt lg:mt-0">
-          <Team projectData={projectData} team={team} />
-          <Info projectData={projectData} agency={agency} client={client} />
-        </div>
       </section>
 
       <Gallery gallery={gallery} onCursor={onCursor} />

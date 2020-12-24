@@ -24,6 +24,11 @@ const mainTransition = {
   ease: mainEasing
 };
 
+const scrollTransition = {
+  duration: 1,
+  ease: mainEasing
+};
+
 //! VARIANTS
 
 export const pageVariants = {
@@ -74,14 +79,14 @@ export const tableVariants = {
 
 export const scrollVariants = {
   hidden: {
-    opacity: 0,
-    y: 60
+    opacity: 0
+    // // y: 60
   },
   visible: {
     opacity: 1,
-    y: 0,
+    // // y: 0,
     transition: {
-      ...mainTransition,
+      ...scrollTransition,
       staggerChildren: 0.5
     }
   }

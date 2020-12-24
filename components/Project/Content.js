@@ -21,7 +21,7 @@ const ProjectContent = ({ projectData }) => {
     <>
       {projectData.project.description && (
         <motion.div
-          className="flex flex-col space-y-6 lg:space-y-10 2xl:space-y-12 w-full lg:w-1/2 paragraph"
+          className="col-span-full lg:col-span-2 lg:col-start-3 row-span-full row-start-1 flex flex-col space-y-6 lg:space-y-10 2xl:space-y-12 paragraph"
           ref={contentRef}
           initial="hidden"
           animate={animation}

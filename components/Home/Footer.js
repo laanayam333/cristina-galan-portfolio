@@ -58,7 +58,7 @@ const HomeFooter = ({ onCursor }) => {
           target="_blank"
           rel="noopener"
         >
-          Linkedin
+          LinkedIn
         </a>
 
         <a
