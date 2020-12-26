@@ -26,6 +26,7 @@
     "postcss": "^8.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "video.js": "^7.10.2"
   }
 }

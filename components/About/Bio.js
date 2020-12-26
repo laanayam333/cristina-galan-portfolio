@@ -20,13 +20,13 @@ const Bio = ({ aboutPageData }) => {
 
   return (
     <motion.section
-      className="flex flex-col lg:flex-row justify-center items-center space-y-12 lg:space-y-0 lg:items-center lg:space-x-12 2xl:space-x-16 min-h-screen custom-container"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-y-20 lg:gap-y-0 lg:gap-x-28 2xl:gap-x-32 justify-center items-center min-h-screen tw-container"
       ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
     >
-      <div className="w-3/4 lg:w-1/3 transform skew-x-3">
+      <div className="col-span-1 lg:col-span-1 transform skew-x-3 px-4 lg:px-0">
         <Image
           src={aboutPageData.artist_photo.url}
           alt={aboutPageData.artist_photo.alt}
@@ -36,10 +36,10 @@ const Bio = ({ aboutPageData }) => {
         />
       </div>
 
-      <div className="w-full lg:w-2/3">
+      <div className=" col-span-1 lg:col-span-2">
         {aboutPageData.bio &&
           aboutPageData.bio.map((paragraph, index) => (
-            <p className="paragraph" key={index}>
+            <p className="tw-paragraph" key={index}>
               {paragraph.text}
             </p>
           ))}

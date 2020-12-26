@@ -29,12 +29,6 @@ const Layout = ({ children }) => {
   };
 
   useEffect(() => {
-    // // if (
-    // //   currentTheme === 'light' ||
-    // //   (!currentTheme &&
-    // //     window.matchMedia('(prefers-color-scheme: dark)').matches)
-    // // ) {
-
     if (currentTheme === 'dark') {
       document.querySelector('html').classList.add('dark');
     } else {

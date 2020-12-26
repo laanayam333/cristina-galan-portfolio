@@ -5,7 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { scrollVariants } from '@/utils/framer';
 
 import Table from '@/components/About/Table';
-import OpenTableIcon from '@/components/Icons/OpenTableIcon';
+import PlusIcon from '@/components/Icons/PlusIcon';
+import MinusIcon from '@/components/Icons/MinusIcon';
 
 const Accordion = ({ table, index, onCursor }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -37,29 +38,29 @@ const Accordion = ({ table, index, onCursor }) => {
         className="flex justify-between items-center"
         layout
         onClick={() => setIsExpanded(isExpanded ? false : index)}
+        onMouseEnter={() => onCursor('tw-hovered')}
+        onMouseLeave={onCursor}
       >
         <h2
-          className={`custom-subheading text-2xl lg:text-5xl 2xl:text-6xl custom-animation ${
+          className={`tw-subheading text-2xl lg:text-5xl 2xl:text-6xl tw-animation ${
             isExpanded ? 'text-red-400' : ''
           }`}
-          onMouseEnter={() => onCursor('hovered')}
-          onMouseLeave={onCursor}
         >
           {table.primary.table_title[0].text}
         </h2>
+
         <div
-          className={`custom-animation ${
-            isExpanded ? 'transform rotate-90' : ''
-          }`}
+          className={`tw-animation ${isExpanded ? 'transform rotate-180' : ''}`}
         >
-          <OpenTableIcon />
+          {!isExpanded && <PlusIcon />}
+          {isExpanded && <MinusIcon />}
         </div>
       </motion.div>
 
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            className="mb-24 lg:mb-32 2xl:mb-36"
+            className="tw-separator-top-small"
             layout
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

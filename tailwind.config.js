@@ -45,6 +45,10 @@ module.exports = {
     },
 
     extend: {
+      minHeight: {
+        'third-screen': '33vh'
+      },
+
       zIndex: {
         '-1': '-1',
         99: 99,

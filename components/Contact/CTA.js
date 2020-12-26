@@ -19,14 +19,17 @@ const CTA = ({ cta }) => {
 
   return (
     <motion.div
-      className="text-lg lg:text-5xl 2xl:text-6xl overflow-hidden"
+      className="overflow-hidden"
       ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
     >
       {cta.map((paragraph, index) => (
-        <p className="whitespace-pre" key={index}>
+        <p
+          className="whitespace-pre tw-paragraph text-xl lg:text-5xl 2xl:text-6xl"
+          key={index}
+        >
           {paragraph.text}
         </p>
       ))}

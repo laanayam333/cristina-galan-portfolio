@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { getAllExposWithSlug, getExpo } from '@/lib/api';
@@ -12,6 +11,7 @@ import {
   useGlobalDispatchContext
 } from '@/utils/context/global-context';
 
+import Hero from '@/components/Expo/Hero';
 import Video from '@/components/Shared/Video';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/Shared/Footer';
@@ -43,42 +43,21 @@ export default function ExpoPage({ expo, gallery, video }) {
         />
       </Head>
 
-      <article>
-        <section className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 space-x-0 lg:space-x-12 min-h-screen custom-container custom-padding">
-          <div className="w-full lg:w-1/2">
-            <Image
-              src={expo.cover_photo.url}
-              alt={expo.cover_photo.alt}
-              layout="responsive"
-              width={expo.cover_photo.dimensions.width}
-              height={expo.cover_photo.dimensions.height}
-            />
+      <article className="grid grid-cols-1 lg:grid-cols-5 gap-x-20 lg:gap-x-28 2xl:gap-x-32 tw-container">
+        <div className="col-start-1 col-span-1 lg:col-span-2">
+          <Hero data={expo} onCursor={onCursor} />
+        </div>
+
+        <div className="flex flex-col justify-center items-center col-start-1 col-span-1 lg:col-start-3 lg:col-span-3">
+          <div className="tw-container">
+            <Gallery gallery={gallery} onCursor={onCursor} />
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <h2 className="custom-card-text text-gray-700 dark:text-gray-400 custom-animation">
-              '{expo.year} {expo.location[0].text}
-            </h2>
-            <h1 className="mt-0.5 lg:mt-1 2xl:mt-2 custom-card-title">
-              {expo.title[0].text}
-            </h1>
-            <div className="mt-2 lg:mt-4 2xl:mt-5">
-              {expo.description &&
-                expo.description.map((paragraph, index) => (
-                  <p className="paragraph" key={index}>
-                    {paragraph.text}
-                  </p>
-                ))}
-            </div>
-          </div>
-        </section>
-
-        <Gallery gallery={gallery} onCursor={onCursor} />
-
-        <Video video={video} />
+          <Video video={video} />
+        </div>
       </article>
 
-      <Footer slug="/expos" cta="Vuelve a expos" onCursor={onCursor} />
+      <Footer cta="Vuelve a expos" slug={'/expos'} onCursor={onCursor} />
     </motion.main>
   );
 }

@@ -42,7 +42,7 @@ export default function ContactPage({ contactPageData }) {
 
       <Hero data={contactPageData} />
 
-      <section className="flex flex-col justify-center h-screen custom-container">
+      <section className="flex flex-col justify-center h-screen tw-container">
         <CTA cta={contactPageData.cta} />
         <Links body={contactPageData.body} onCursor={onCursor} />
       </section>

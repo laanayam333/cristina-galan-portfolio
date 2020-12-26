@@ -37,7 +37,7 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
 
   return (
     <motion.header
-      className="absolute top-0 right-0 left-0 z-99 flex justify-between items-center w-full h-16 lg:h-20 2xl:h-24 custom-container"
+      className="absolute top-0 right-0 left-0 z-99 flex justify-between items-center w-full h-20 lg:h-28 2xl:h-32 tw-container"
       variants={parentVariants}
       initial="initial"
       animate="animate"
@@ -48,8 +48,8 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
       >
         <Link href="/">
           <a
-            className="custom-link"
-            onMouseEnter={() => onCursor('hovered')}
+            className="tw-link"
+            onMouseEnter={() => onCursor('tw-hovered')}
             onMouseLeave={onCursor}
           >
             C
@@ -57,16 +57,16 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
         </Link>
 
         <span
-          className="inline-block h-3 w-3 lg:h-5 lg:w-5 2xl:h-6 2xl:w-6 rounded-full bg-red-400 hover:bg-black dark:hover:bg-white custom-animation"
+          className="inline-block h-3 w-3 lg:h-5 lg:w-5 2xl:h-6 2xl:w-6 rounded-full bg-red-400 hover:bg-black dark:hover:bg-white tw-animation"
           onClick={toggleTheme}
-          onMouseEnter={() => onCursor('pointer')}
+          onMouseEnter={() => onCursor('tw-pointer')}
           onMouseLeave={onCursor}
         ></span>
 
         <Link href="/">
           <a
-            className="custom-link"
-            onMouseEnter={() => onCursor('hovered')}
+            className="tw-link"
+            onMouseEnter={() => onCursor('tw-hovered')}
             onMouseLeave={onCursor}
           >
             G
@@ -77,26 +77,26 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
       <motion.div
         className="block lg:hidden"
         onClick={() => setToggleMenu(!toggleMenu)}
-        onMouseEnter={() => onCursor('hovered')}
+        onMouseEnter={() => onCursor('tw-hovered')}
         onMouseLeave={onCursor}
         variants={childVariants}
       >
-        <button className="border-none bg-none outline-none ring-0 focus:outline-none custom-link">
+        <button className="border-none bg-none outline-none ring-0 focus:outline-none tw-link">
           Menú
         </button>
       </motion.div>
 
       <motion.div className="hidden lg:block" variants={childVariants}>
-        <ul className="flex lg:space-x-12 2x:space-x-16">
+        <ul className="flex lg:space-x-14 2x:space-x-16">
           {MENU_LINKS &&
             MENU_LINKS.map((link, index) => (
               <li
                 key={index}
-                onMouseEnter={() => onCursor('hovered')}
+                onMouseEnter={() => onCursor('tw-hovered')}
                 onMouseLeave={onCursor}
               >
                 <Link href={`/${link.id}`}>
-                  <a className="custom-link">{link.title}</a>
+                  <a className="tw-link">{link.title}</a>
                 </Link>
               </li>
             ))}

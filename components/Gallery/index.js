@@ -31,14 +31,14 @@ const Gallery = ({ gallery, onCursor }) => {
     <>
       {gallery && (
         <motion.section
-          className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-12 2xl:gap-x-16 gap-y-8 lg:gap-y-24 2xl:gap-y-28 custom-container custom-padding"
+          className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 2xl:gap-16 tw-separator-top"
           ref={contentRef}
           initial="hidden"
           animate={animation}
           variants={scrollVariants}
         >
           {gallery.fields.map((elm, index) => (
-            <div>
+            <div className="flex flex-col justify-center tw-placeholder">
               <Image
                 key={index}
                 src={elm.photo.url}
@@ -49,7 +49,7 @@ const Gallery = ({ gallery, onCursor }) => {
                 width={elm.photo.dimensions.width}
                 height={elm.photo.dimensions.height}
                 onClick={() => handleModalToggle(index)}
-                onMouseEnter={() => onCursor('hovered')}
+                onMouseEnter={() => onCursor('tw-hovered')}
                 onMouseLeave={onCursor}
               />
             </div>

@@ -54,17 +54,21 @@ export default function ProjectPage({
 
       <Hero data={projectData} />
 
-      <section className="grid grid-cols-none grid-rows-3 lg:grid-cols-4 lg:grid-rows-none gap-x-0 gap-y-12 lg:gap-x-12 2xl:gap-x-14 custom-container custom-padding">
+      <section className="grid grid-cols-1 grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 gap-10 lg:gap-14 2xl:gap-16 tw-container tw-separator-top">
         <Team projectData={projectData} team={team} />
         <Info projectData={projectData} agency={agency} client={client} />
         <Content projectData={projectData} />
       </section>
 
-      <Gallery gallery={gallery} onCursor={onCursor} />
+      <div className="tw-container">
+        <Gallery gallery={gallery} onCursor={onCursor} />
+      </div>
 
-      <Video video={video} />
+      <div className="tw-separator-top">
+        <Video video={video} />
+      </div>
 
-      <Footer cta="Vuelve a projectos" slug={'/'} onCursor={onCursor} />
+      <Footer cta="Vuelve a proyectos" slug={'/'} onCursor={onCursor} />
     </motion.main>
   );
 }

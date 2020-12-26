@@ -20,18 +20,20 @@ const Modal = ({
           exit="exit"
           variants={modalVariants}
           onClick={() => handleModalToggle('')}
-          onMouseEnter={() => onCursor('hovered')}
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
         >
-          <Image
-            src={gallery.fields[selected].photo.url}
-            alt={gallery.fields[selected].photo.alt}
-            layout="fill"
-            objectFit="contain"
-            quality={100}
-            onMouseEnter={() => onCursor('hovered')}
-            onMouseLeave={onCursor}
-          />
+          <div className="relative w-5/6 h-5/6">
+            <Image
+              src={gallery.fields[selected].photo.url}
+              alt={gallery.fields[selected].photo.alt}
+              layout="fill"
+              objectFit="contain"
+              quality={100}
+              onMouseEnter={() => onCursor('tw-hovered')}
+              onMouseLeave={onCursor}
+            />
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

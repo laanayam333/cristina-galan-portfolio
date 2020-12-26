@@ -21,7 +21,7 @@ const HomeFooter = ({ onCursor }) => {
 
   return (
     <motion.footer
-      className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 custom-container custom-mt h-64 lg:h-72 2xl:h-80 "
+      className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 h-64 lg:h-72 2xl:h-80 tw-container "
       ref={contentRef}
       initial="hidden"
       animate={animation}
@@ -29,9 +29,9 @@ const HomeFooter = ({ onCursor }) => {
     >
       <div className="text-center lg:text-left">
         <a
-          className="custom-link"
+          className="tw-link"
           href="mailto:cristina.galan.vargas@hotmail.com"
-          onMouseEnter={() => onCursor('hovered')}
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
         >
           cristina.galan.vargas@hotmail.com
@@ -40,8 +40,8 @@ const HomeFooter = ({ onCursor }) => {
 
       <div className="flex lg:flex-col space-x-8 lg:space-x-0 lg:space-y-4 2xl:space-y-6 lg:text-right">
         <a
-          className="custom-link"
-          onMouseEnter={() => onCursor('hovered')}
+          className="tw-link"
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
           href="https://www.instagram.com/cristina_galan_vargas/?hl=en"
           target="_blank"
@@ -51,8 +51,8 @@ const HomeFooter = ({ onCursor }) => {
         </a>
 
         <a
-          className="custom-link"
-          onMouseEnter={() => onCursor('hovered')}
+          className="tw-link"
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
           href="https://www.linkedin.com/in/cristina-gal%C3%A1n-vargas-b878b598/"
           target="_blank"
@@ -62,8 +62,8 @@ const HomeFooter = ({ onCursor }) => {
         </a>
 
         <a
-          className="custom-link"
-          onMouseEnter={() => onCursor('hovered')}
+          className="tw-link"
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
           href="https://vimeo.com/user52102497"
           target="_blank"

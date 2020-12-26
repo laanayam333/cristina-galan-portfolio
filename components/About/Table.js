@@ -13,7 +13,7 @@ const Table = ({ rows }) => {
         <tbody>
           {rows.map((row, index) => (
             <tr
-              className="flex border-b-2 border-gray-100 dark:border-gray-900 custom-animation"
+              className="flex border-b-2 border-gray-100 dark:border-gray-900 tw-animation"
               key={index}
             >
               {row.year_location && (

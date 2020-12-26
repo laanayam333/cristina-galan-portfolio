@@ -19,32 +19,32 @@ const ProjectTeam = ({ projectData, team }) => {
 
   return (
     <motion.section
-      className="row-span-1 col-span-full lg:col-span-1 lg:col-start-1"
+      className="col-span-1 col-start-1"
       ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
     >
-      <div className="pair">
-        <h3 className="label">Mi Rol</h3>
+      <div>
+        <h3 className="tw-label">Mi Rol</h3>
         {projectData.project?.role && (
-          <div className="pair">
-            <p className="value">{projectData.project.role[0].text}</p>
+          <div className="tw-pair">
+            <p className="tw-value">{projectData.project.role[0].text}</p>
           </div>
         )}
       </div>
 
       {team && (
-        <motion className="mb-4 lg:mb-6 2xl:mb-7">
-          <h3 className="mb-2 lg:mb-4 2xl:mb-5 label">Equipo</h3>
+        <motion.div>
+          <h3 className="tw-label tw-pair">Equipo</h3>
 
           {team.fields.map((member, index) => (
-            <div className="pair" key={index}>
-              <p className="key">{member.member_role[0].text}</p>
-              <p className="value">{member.member_name[0].text}</p>
+            <div className="tw-pair" tw-key={index}>
+              <p className="tw-key">{member.member_role[0].text}</p>
+              <p className="tw-value">{member.member_name[0].text}</p>
             </div>
           ))}
-        </motion>
+        </motion.div>
       )}
     </motion.section>
   );

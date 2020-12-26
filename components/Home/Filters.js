@@ -33,7 +33,7 @@ const Filters = ({
 
   return (
     <motion.section
-      className="custom-mt custom-container"
+      className="tw-container tw-separator-top"
       ref={contentRef}
       animate={animation}
       initial="hidden"

@@ -26,7 +26,7 @@ const Card = ({ expo, onCursor }) => {
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
-      onMouseEnter={() => onCursor('hovered')}
+      onMouseEnter={() => onCursor('tw-hovered')}
       onMouseLeave={onCursor}
     >
       <Link href={`/expos/${expo.node._meta.uid}`}>
@@ -41,7 +41,7 @@ const Card = ({ expo, onCursor }) => {
             />
 
             <div
-              className="relative w-full h-full z-99 flex justify-start items-end p-2 lg:p-4 2xl:p-6 custom-card-title text-white hover:opacity-0 custom-animation"
+              className="relative w-full h-full z-99 flex justify-start items-end p-2 lg:p-4 2xl:p-6 tw-card-title text-white hover:opacity-0 tw-animation"
               style={{ backgroundColor: `${expo.node.card_color}` }}
             >
               {expo.node.location[0].text}

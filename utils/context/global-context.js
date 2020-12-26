@@ -14,7 +14,7 @@ const initialState = {
   // // currentTheme: cookies.theme == null ? 'light' : cookies.theme,
   currentTheme: 'light',
   cursorType: false,
-  cursorStyles: ['pointer', 'hovered']
+  cursorStyles: ['tw-pointer', 'tw-hovered']
 };
 
 //! REDUCER

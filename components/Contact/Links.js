@@ -19,7 +19,7 @@ const Links = ({ body, onCursor }) => {
 
   return (
     <motion.ul
-      className="flex space-x-4 lg:space-x-24 2xl:space-x-28 custom-mt"
+      className="flex space-x-12 lg:space-x-24 2xl:space-x-28 tw-separator-top-small"
       ref={contentRef}
       initial="hidden"
       animate={animation}
@@ -28,11 +28,11 @@ const Links = ({ body, onCursor }) => {
       {body.map((link, index) => (
         <li
           key={index}
-          onMouseEnter={() => onCursor('hovered')}
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
         >
           <a
-            className="text-base lg:text-2xl 2xl:text-3xl custom-link"
+            className="text-base lg:text-2xl 2xl:text-3xl tw-link"
             href={link.primary.link.url}
             target="_blank"
             rel="noopener"

@@ -21,8 +21,8 @@ const Footer = ({ cta, slug, onCursor }) => {
   }, [animation, inView]);
 
   return (
-    <motion.section
-      className="custom-link custom-container custom-mt custom-mb"
+    <motion.footer
+      className="tw-container tw-separator-top tw-separator-bottom tw-link"
       ref={contentRef}
       initial="hidden"
       animate={animation}
@@ -31,14 +31,14 @@ const Footer = ({ cta, slug, onCursor }) => {
       <Link href={slug}>
         <a
           className="flex items-center space-x-2 lg:space-x-4 2xl:space-x-5"
-          onMouseEnter={() => onCursor('hovered')}
+          onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
         >
           <BackIcon />
           <h4>{`${cta}`}</h4>
         </a>
       </Link>
-    </motion.section>
+    </motion.footer>
   );
 };
 

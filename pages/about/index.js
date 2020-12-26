@@ -47,7 +47,7 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
         <Bio aboutPageData={aboutPageData} />
 
         <AnimateSharedLayout>
-          <section className="custom-padding custom-container custom-mt">
+          <section className="tw-container tw-separator-top tw-separator-bottom">
             <motion.ul
               className="flex flex-col space-y-12 lg:space-y-20 2xl:space-y-24"
               layout
@@ -56,7 +56,8 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
               {tableData.map((table, index) => (
                 <Accordion key={index} table={table} onCursor={onCursor} />
               ))}
-              <Clients clientsData={clientsData} />
+
+              <Clients clientsData={clientsData} onCursor={onCursor} />
             </motion.ul>
           </section>
         </AnimateSharedLayout>

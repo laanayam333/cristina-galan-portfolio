@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
       <Link href={`/projects/${project._meta.uid}`}>
         <a>
           <div className="flex">
-            <p className="pr-1 lg:pr-3 2xl:pr-4 custom-card-text writing-mode-vertical-rl text-orientation-mixed">
+            <p className="pr-1 lg:pr-3 2xl:pr-4 tw-card-text writing-mode-vertical-rl text-orientation-mixed">
               {project.year}
             </p>
 
@@ -44,10 +44,10 @@ const ProjectCard = ({ project }) => {
               />
 
               <div className="flex flex-col">
-                <p className="pt-1 lg:pt-3 2xl:pt-4 custom-card-text">
+                <p className="pt-1 lg:pt-3 2xl:pt-4 tw-card-text">
                   {project.category.name[0].text}
                 </p>
-                <p className="pt-0.5 lg:pt-1 2xl:pt-2 custom-card-title">
+                <p className="pt-0.5 lg:pt-1 2xl:pt-2 tw-card-title">
                   {project.title[0].text}
                 </p>
               </div>

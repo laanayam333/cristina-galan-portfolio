@@ -6,7 +6,7 @@ import { parentVariants, childVariants } from '@/utils/framer';
 const Hero = ({ data }) => {
   return (
     <motion.section
-      className="flex flex-col justify-end h-screen bg-cover lg:bg-cover bg-no-repeat bg-center lg:bg-fixed overflow-hidden custom-container whitespace-nowrap"
+      className="flex flex-col justify-end h-screen bg-cover lg:bg-cover bg-no-repeat bg-center lg:bg-fixed overflow-hidden"
       variants={parentVariants}
     >
       <Image
@@ -21,7 +21,7 @@ const Hero = ({ data }) => {
         loading="eager"
       />
       <motion.h1
-        className="z-99 font-heading text-8xl lg:text-11xl 2xl:text-12xl text-white uppercase whitespace-normal leading-none"
+        className="z-99 font-heading text-9xl lg:text-11xl 2xl:text-12xl text-white uppercase whitespace-normal"
         variants={childVariants}
       >
         {data.project.title[0].text}

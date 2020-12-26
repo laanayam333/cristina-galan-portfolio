@@ -9,8 +9,6 @@ const Cursor = ({ toggleMenu }) => {
     y: 400
   });
 
-  // const cursor = useRef(null);
-
   const onMouseMove = (event) => {
     const { pageX: x, pageY: y } = event;
     setMousePosition({ x, y });
@@ -26,9 +24,9 @@ const Cursor = ({ toggleMenu }) => {
   return (
     <>
       <div
-        className={`cursor ${!!cursorType ? 'hovered' : ''} ${cursorType} ${
-          toggleMenu ? 'nav-open' : ''
-        }`}
+        className={`tw-cursor ${
+          !!cursorType ? 'tw-hovered' : ''
+        } ${cursorType} ${toggleMenu ? 'nav-open' : ''}`}
         style={{
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`

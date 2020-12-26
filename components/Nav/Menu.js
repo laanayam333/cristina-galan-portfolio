@@ -13,26 +13,26 @@ const Menu = ({ toggleMenu, setToggleMenu, onCursor, x, y }) => {
         {toggleMenu && (
           <>
             <motion.main
-              className="fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white z-100 overflow-hidden custom-container"
+              className="fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white z-100 overflow-hidden tw-container"
               initial="initial"
               animate="animate"
               exit="exit"
               custom={toggleMenu}
               variants={menuVariants}
             >
-              <header className="flex items-center justify-end h-16 lg:h-20 2xl:h-24">
+              <header className="flex items-center justify-end h-20 lg:h-28 2xl:h-32">
                 <div
                   onClick={() => setToggleMenu(!toggleMenu)}
-                  onMouseEnter={() => onCursor('pointer')}
+                  onMouseEnter={() => onCursor('tw-pointer')}
                   onMouseLeave={onCursor}
                 >
-                  <button className="origin-center border-none bg-none focus:outline-none custom-link text-white dark:text-black">
+                  <button className="origin-center border-none bg-none focus:outline-none tw-link text-white dark:text-black">
                     Cerrar
                   </button>
                 </div>
               </header>
 
-              <ul className="flex flex-col justify-center items-center space-y-4 h-4/5">
+              <ul className="flex flex-col justify-center space-y-4 h-5/6">
                 {MENU_LINKS.map((menuItem) => (
                   <List
                     key={menuItem.id}
@@ -51,11 +51,11 @@ const Menu = ({ toggleMenu, setToggleMenu, onCursor, x, y }) => {
 
               <footer
                 onClick={() => setToggleMenu(!toggleMenu)}
-                onMouseEnter={() => onCursor('pointer')}
+                onMouseEnter={() => onCursor('tw-pointer')}
                 onMouseLeave={onCursor}
               >
                 <Link href="/">
-                  <a className="custom-link text-white dark:text-black">
+                  <a className="tw-link text-white dark:text-black">
                     {`<< Inicio / Proyectos`}
                   </a>
                 </Link>

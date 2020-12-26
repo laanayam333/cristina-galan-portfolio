@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none; /* IE and Edge */
 
-  @apply w-full h-full overflow-x-hidden overscroll-none font-core text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
+  @apply w-full h-full overflow-x-hidden overscroll-none font-core leading-none text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
 }
 
 @keyframes ticker-kf {
@@ -68,71 +68,79 @@ body {
 
 /*  //! GLOBAL !// */
 
-.paragraph {
-  @apply font-core text-lg lg:text-2xl 2xl:text-3xl;
+.tw-container {
+  @apply px-5 lg:px-14 2xl:px-16;
 }
 
-.label {
-  @apply mb-2 lg:mb-4 2xl:mb-5 text-xs lg:text-base 2xl:text-lg font-bold italic uppercase;
+.tw-separator-top {
+  @apply mt-20 lg:mt-28 2xl:mt-32;
 }
 
-.pair {
-  @apply flex flex-col mb-2 lg:mb-4 2xl:mb-5;
+.tw-separator-top-small {
+  @apply mt-10 lg:mt-14 2xl:mt-16;
 }
 
-.key {
-  @apply mr-0.5 lg:mr-1 2xl:mr-1.5 text-sm lg:text-lg 2xl:text-xl text-gray-400 dark:text-gray-700 transition-colors duration-300 ease-in-out;
+.tw-separator-bottom {
+  @apply mb-20 lg:mb-28 2xl:mb-32;
 }
 
-.value {
-  @apply mr-2 lg:mr-4 text-sm lg:text-lg 2xl:text-xl text-gray-700 dark:text-gray-400 transition-colors duration-300 ease-in-out;
+.tw-placeholder {
+  @apply bg-gray-100 dark:bg-gray-900 tw-animation;
 }
 
-.custom-subheading {
+.tw-page-title {
+  @apply font-heading text-11xl lg:text-13xl 2xl:text-14xl uppercase;
+}
+
+.tw-paragraph {
+  @apply flex flex-col space-y-5 lg:space-y-14 2xl:space-y-16 font-core text-base lg:text-xl 2xl:text-2xl leading-relaxed;
+}
+
+.tw-label {
+  @apply text-xs lg:text-base 2xl:text-lg font-bold italic uppercase leading-relaxed;
+}
+
+.tw-pair {
+  @apply flex flex-col mt-1 lg:mt-3 2xl:mt-4;
+}
+
+.tw-key {
+  @apply mr-0.5 lg:mr-1 2xl:mr-1.5 text-sm lg:text-lg 2xl:text-xl text-gray-400 dark:text-gray-700 leading-snug tw-animation;
+}
+
+.tw-value {
+  @apply mr-2 lg:mr-4 text-sm lg:text-lg 2xl:text-xl text-gray-700 dark:text-gray-400 leading-snug tw-animation;
+}
+
+.tw-subheading {
   @apply text-4xl lg:text-6xl 2xl:text-7xl font-bold uppercase;
 }
 
-.custom-card-title {
-  @apply font-bold text-2xl lg:text-5xl 2xl:text-6xl uppercase leading-none;
+.tw-card-title {
+  @apply font-bold text-2xl lg:text-5xl 2xl:text-6xl uppercase;
 }
 
-.custom-card-text {
-  @apply font-core text-base lg:text-xl 2xl:text-2xl leading-none text-gray-700 dark:text-gray-400 custom-animation;
+.tw-card-text {
+  @apply font-core text-lg lg:text-2xl 2xl:text-3xl text-gray-700 dark:text-gray-400 tw-animation;
 }
 
-.custom-container {
-  @apply px-4 lg:px-12 2xl:px-16;
+.tw-link {
+  @apply text-base lg:text-lg 2xl:text-xl text-gray-500 hover:text-red-400 tw-animation;
 }
 
-.custom-padding {
-  @apply py-8 lg:py-12 2xl:py-16;
-}
-
-.custom-mt {
-  @apply mt-12 lg:mt-16 2xl:mt-24;
-}
-
-.custom-mb {
-  @apply mb-12 lg:mb-16 2xl:mb-24;
-}
-
-.custom-link {
-  @apply text-base lg:text-lg 2xl:text-xl text-gray-500 hover:text-red-400 custom-animation;
-}
-
-.custom-animation {
+.tw-animation {
   @apply transition duration-300 ease-in-out;
 }
 
-.cursor {
+.tw-cursor {
   @apply hidden lg:block absolute top-0 left-0 w-8 h-8 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
 }
 
-.pointer {
+.tw-pointer {
   @apply border-4 border-solid border-black dark:border-white !important;
 }
 
-.hovered {
+.tw-hovered {
   @apply bg-transparent !important;
   @apply w-14 h-14 border-4 border-solid border-red-400;
 }

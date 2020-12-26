@@ -40,7 +40,7 @@ export default function ExposPage({ exposPageData, exposData }) {
         />
       </Head>
 
-      <Hero data={exposPageData.node} />
+      <Hero data={exposPageData.node} onCursor={onCursor} />
 
       <List exposData={exposData} onCursor={onCursor} />
     </motion.main>
