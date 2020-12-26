@@ -20,7 +20,7 @@ const Bio = ({ aboutPageData }) => {
 
   return (
     <motion.section
-      className="grid grid-cols-1 lg:grid-cols-3 gap-y-20 lg:gap-y-0 lg:gap-x-28 2xl:gap-x-32 justify-center items-center min-h-screen tw-container"
+      className="grid lg:grid-cols-3 gap-y-20 lg:gap-y-0 lg:gap-x-28 2xl:gap-x-32 justify-center items-center min-h-screen tw-container"
       ref={contentRef}
       initial="hidden"
       animate={animation}

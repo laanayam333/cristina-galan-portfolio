@@ -1,9 +1,9 @@
-import ProjectCard from '@/components/Project/Card';
+import Card from '@/components/Project/Card';
 
-const HomeProjects = ({ displayedProjects, onCursor }) => {
+const Projects = ({ displayedProjects, onCursor }) => {
   return (
     <section>
-      <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-24 2xl:gap-32 tw-container tw-separator-top">
+      <div className="grid gap-y-12 lg:grid-cols-2 lg:gap-24 2xl:gap-32 tw-container tw-separator-t">
         {displayedProjects &&
           displayedProjects.map((project, index) => (
             <div
@@ -11,7 +11,7 @@ const HomeProjects = ({ displayedProjects, onCursor }) => {
               onMouseEnter={() => onCursor('tw-hovered')}
               onMouseLeave={onCursor}
             >
-              <ProjectCard project={project.node} />
+              <Card project={project.node} />
             </div>
           ))}
       </div>
@@ -19,4 +19,4 @@ const HomeProjects = ({ displayedProjects, onCursor }) => {
   );
 };
 
-export default HomeProjects;
+export default Projects;

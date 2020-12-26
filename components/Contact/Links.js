@@ -19,7 +19,7 @@ const Links = ({ body, onCursor }) => {
 
   return (
     <motion.ul
-      className="flex space-x-12 lg:space-x-24 2xl:space-x-28 tw-separator-top-small"
+      className="flex space-x-12 lg:space-x-24 2xl:space-x-28 tw-separator-t-sm"
       ref={contentRef}
       initial="hidden"
       animate={animation}

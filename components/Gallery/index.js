@@ -31,7 +31,7 @@ const Gallery = ({ gallery, onCursor }) => {
     <>
       {gallery && (
         <motion.section
-          className="w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-14 2xl:gap-16 tw-separator-top"
+          className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t"
           ref={contentRef}
           initial="hidden"
           animate={animation}

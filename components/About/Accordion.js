@@ -60,7 +60,7 @@ const Accordion = ({ table, index, onCursor }) => {
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            className="tw-separator-top-small"
+            className="tw-separator-t-sm"
             layout
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

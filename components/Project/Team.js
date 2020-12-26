@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { scrollVariants } from '@/utils/framer';
 
-const ProjectTeam = ({ projectData, team }) => {
+const Team = ({ projectData, team }) => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
     triggerOnce: true,
@@ -19,7 +19,7 @@ const ProjectTeam = ({ projectData, team }) => {
 
   return (
     <motion.section
-      className="col-span-1 col-start-1"
+      className="col-span-1 col-start-1 w-full"
       ref={contentRef}
       initial="hidden"
       animate={animation}
@@ -35,7 +35,7 @@ const ProjectTeam = ({ projectData, team }) => {
       </div>
 
       {team && (
-        <motion.div>
+        <motion.div className="tw-separator-t-xs">
           <h3 className="tw-label tw-pair">Equipo</h3>
 
           {team.fields.map((member, index) => (
@@ -50,4 +50,4 @@ const ProjectTeam = ({ projectData, team }) => {
   );
 };
 
-export default ProjectTeam;
+export default Team;

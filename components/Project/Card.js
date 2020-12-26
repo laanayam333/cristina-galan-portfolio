@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { scrollVariants, cardHover } from '@/utils/framer';
 
-const ProjectCard = ({ project }) => {
+const Card = ({ project }) => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
     triggerOnce: true,
@@ -59,4 +59,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default Card;

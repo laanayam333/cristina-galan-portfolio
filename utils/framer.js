@@ -40,7 +40,7 @@ export const pageVariants = {
     transition: {
       ...pageTransition,
       when: 'beforeChildren',
-      staggerChildren: 0.1
+      staggerChildren: 0.3
     }
   }
 };
@@ -48,14 +48,14 @@ export const pageVariants = {
 export const parentVariants = {
   animate: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.3
     }
   }
 };
 
 export const headerVariants = {
   initial: {
-    y: -20,
+    y: -30,
     opacity: 0
   },
   animate: {
@@ -67,7 +67,7 @@ export const headerVariants = {
 
 export const childVariants = {
   initial: {
-    y: 20,
+    y: 30,
     opacity: 0
   },
   animate: {
@@ -83,7 +83,7 @@ export const tableVariants = {
     opacity: 0
   },
   animate: {
-    y: 20,
+    y: 30,
     opacity: 1,
     transition: mainTransition
   }
@@ -91,15 +91,13 @@ export const tableVariants = {
 
 export const scrollVariants = {
   hidden: {
-    opacity: 0,
-    y: 20
+    opacity: 0
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
       ...scrollTransition,
-      staggerChildren: 0.5
+      staggerChildren: 0.3
     }
   }
 };

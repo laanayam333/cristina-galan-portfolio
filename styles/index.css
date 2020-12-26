@@ -72,16 +72,32 @@ body {
   @apply px-5 lg:px-14 2xl:px-16;
 }
 
-.tw-separator-top {
+.tw-separator-t {
   @apply mt-20 lg:mt-28 2xl:mt-32;
 }
 
-.tw-separator-top-small {
+.tw-separator-t-sm {
   @apply mt-10 lg:mt-14 2xl:mt-16;
 }
 
-.tw-separator-bottom {
+.tw-separator-t-xs {
+  @apply mt-5 lg:mt-7 2xl:mt-8;
+}
+
+.tw-separator-t-xxs {
+  @apply mt-2.5 lg:mt-3.5 2xl:mt-4;
+}
+
+.tw-separator-b {
   @apply mb-20 lg:mb-28 2xl:mb-32;
+}
+
+.tw-separator-b-sm {
+  @apply mb-10 lg:mb-14 2xl:mb-16;
+}
+
+.tw-separator-b-xs {
+  @apply mb-5 lg:mb-7 2xl:mb-8;
 }
 
 .tw-placeholder {
@@ -101,7 +117,7 @@ body {
 }
 
 .tw-pair {
-  @apply flex flex-col mt-1 lg:mt-3 2xl:mt-4;
+  @apply flex flex-col tw-separator-t-xxs;
 }
 
 .tw-key {

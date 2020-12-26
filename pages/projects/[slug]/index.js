@@ -37,6 +37,7 @@ export default function ProjectPage({
 
   return (
     <motion.main
+      className="tw-container tw-separator-b"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
@@ -54,17 +55,17 @@ export default function ProjectPage({
 
       <Hero data={projectData} />
 
-      <section className="grid grid-cols-1 grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 gap-10 lg:gap-14 2xl:gap-16 tw-container tw-separator-top">
+      <section className="grid grid-rows-2 lg:grid-cols-4 lg:grid-rows-none gap-10 lg:gap-14 2xl:gap-16 tw-separator-t-sm">
         <Team projectData={projectData} team={team} />
         <Info projectData={projectData} agency={agency} client={client} />
         <Content projectData={projectData} />
       </section>
 
-      <div className="tw-container">
+      <div>
         <Gallery gallery={gallery} onCursor={onCursor} />
       </div>
 
-      <div className="tw-separator-top">
+      <div className="tw-separator-t">
         <Video video={video} />
       </div>
 

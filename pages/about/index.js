@@ -26,7 +26,7 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
 
   return (
     <motion.main
-      className="tw-separator-bottom"
+      className="tw-separator-b"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
@@ -48,7 +48,7 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
         <Bio aboutPageData={aboutPageData} />
 
         <AnimateSharedLayout>
-          <section className="tw-container tw-separator-top">
+          <section className="tw-container tw-separator-t">
             <motion.ul
               className="flex flex-col space-y-12 lg:space-y-20 2xl:space-y-24"
               layout

@@ -63,12 +63,12 @@ const Clients = ({ clientsData, onCursor }) => {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              className="tw-separator-top-sm"
+              className="tw-separator-t-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <div className="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 gap-20 xl:gap-28 2xl:gap-32">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-20 xl:gap-28 2xl:gap-32">
                 {clientsData[0].fields.map((logo, index) => (
                   <Image
                     key={index}

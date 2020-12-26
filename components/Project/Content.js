@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { scrollVariants } from '@/utils/framer';
 
-const ProjectContent = ({ projectData }) => {
+const Content = ({ projectData }) => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
     triggerOnce: true,
@@ -36,4 +36,4 @@ const ProjectContent = ({ projectData }) => {
   );
 };
 
-export default ProjectContent;
+export default Content;

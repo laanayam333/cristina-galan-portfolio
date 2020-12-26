@@ -28,7 +28,7 @@ export default function ExpoPage({ expo, gallery, video }) {
 
   return (
     <motion.main
-      className="tw-container tw-separator-bottom"
+      className="tw-container tw-separator-b"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
