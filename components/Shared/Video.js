@@ -24,14 +24,14 @@ const Video = ({ video }) => {
     <>
       {video && (
         <motion.section
-          className="w-full h-11/12 mt-10 lg:mt-0 lg:h-screen"
+          className="flex items-center w-full h-screen tw-container mt-10 lg:mt-0 lg:h-screen"
           ref={contentRef}
           initial="hidden"
           animate={animation}
           variants={scrollVariants}
         >
           <div
-            className={`w-full h-full lg:py-14 2xl:py-16 transition-opacity duration-1000 ease-in-out ${
+            className={`w-full h-auto lg:h-full lg:py-14 2xl:py-16 transition-opacity duration-1000 ease-in-out ${
               isPlayerLoaded ? 'opacity-100' : 'opacity-0'
             }`}
           >

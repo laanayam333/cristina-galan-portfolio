@@ -22,7 +22,7 @@ const Footer = ({ cta, slug, onCursor }) => {
 
   return (
     <motion.footer
-      className="tw-container tw-separator-top tw-separator-bottom tw-link"
+      className="tw-container tw-separator-top tw-link"
       ref={contentRef}
       initial="hidden"
       animate={animation}

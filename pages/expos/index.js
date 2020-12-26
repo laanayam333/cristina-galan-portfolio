@@ -25,6 +25,7 @@ export default function ExposPage({ exposPageData, exposData }) {
 
   return (
     <motion.main
+      className="tw-separator-bottom"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"

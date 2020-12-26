@@ -20,10 +20,7 @@ export default function ReelPage({ reelPageData, video }) {
         <title>
           {reelPageData.meta_title} | {WEB_NAME}
         </title>
-        <meta
-          name="description"
-          content="The about page with links to social media profiles"
-        />
+        <meta name="description" content={reelPageData.meta_description} />
       </Head>
 
       <Hero data={reelPageData} />
