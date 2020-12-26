@@ -5,19 +5,18 @@ import { parentVariants, childVariants } from '@/utils/framer';
 const Hero = ({ data }) => {
   return (
     <motion.section
-      className="flex flex-col justify-center mt-20 lg:mt-0 lg:min-h-screen"
+      className="flex flex-col justify-center min-h-screen overflow-x-hidden"
       variants={parentVariants}
     >
-      <motion.h2 className="tw-card-text" variants={childVariants}>
-        {data.location[0].text} '{data.year}
-      </motion.h2>
+      <motion.div variants={childVariants}>
+        <h2 className="text-lg lg:text-3xl 2xl:text-4xl text-gray-700 dark:text-gray-400 tw-paragraph">
+          {data.location[0].text} '{data.year}
+        </h2>
 
-      <motion.h1
-        className="mt-1 lg:mt-3 2xl:mt-4 tw-card-title"
-        variants={childVariants}
-      >
-        {data.title[0].text}
-      </motion.h1>
+        <h1 className="mt-1 lg:mt-3 2xl:mt-4 text-3xl lg:text-6xl 2xl:text-7xl tw-subheading">
+          {data.title[0].text}
+        </h1>
+      </motion.div>
 
       <motion.div className="mt-2 lg:mt-4 2xl:mt-5" variants={childVariants}>
         {data.description &&

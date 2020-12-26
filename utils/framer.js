@@ -14,7 +14,7 @@ export const closeModalTransition = {
 
 const pageEasing = [0.87, 0, 0.13, 1];
 const pageTransition = {
-  duration: 0.1,
+  duration: 0.3,
   ease: pageEasing
 };
 
@@ -25,7 +25,7 @@ const mainTransition = {
 };
 
 const scrollTransition = {
-  duration: 1,
+  duration: 0.9,
   ease: mainEasing
 };
 
@@ -53,9 +53,21 @@ export const parentVariants = {
   }
 };
 
+export const headerVariants = {
+  initial: {
+    y: -20,
+    opacity: 0
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: mainTransition
+  }
+};
+
 export const childVariants = {
   initial: {
-    y: 60,
+    y: 20,
     opacity: 0
   },
   animate: {
@@ -71,7 +83,7 @@ export const tableVariants = {
     opacity: 0
   },
   animate: {
-    y: 60,
+    y: 20,
     opacity: 1,
     transition: mainTransition
   }
@@ -79,12 +91,12 @@ export const tableVariants = {
 
 export const scrollVariants = {
   hidden: {
-    opacity: 0
-    // // y: 60
+    opacity: 0,
+    y: 20
   },
   visible: {
     opacity: 1,
-    // // y: 0,
+    y: 0,
     transition: {
       ...scrollTransition,
       staggerChildren: 0.5
@@ -101,29 +113,8 @@ export const menuVariants = {
   exit: { x: '-100%', transition: mainTransition }
 };
 
-export const headerVariants = {
-  hidden: { y: -72, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-  transition: mainTransition
-};
-
 export const modalVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 }
-};
-
-export const containerVariants = {
-  initial: {
-    top: '-50%',
-    transition: {
-      type: 'spring'
-    }
-  },
-  isOpen: {
-    top: '50%'
-  },
-  exit: {
-    top: '-50%'
-  }
 };

@@ -11,7 +11,7 @@ import {
   useGlobalStateContext
 } from '@/utils/context/global-context';
 
-import { childVariants, parentVariants } from '@/utils/framer';
+import { parentVariants, headerVariants } from '@/utils/framer';
 
 import { MENU_LINKS } from '@/utils/constants';
 
@@ -44,7 +44,7 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
     >
       <motion.div
         className="flex items-center space-x-4 lg:space-x-6 2xl:space-x-7"
-        variants={childVariants}
+        variants={headerVariants}
       >
         <Link href="/">
           <a
@@ -79,14 +79,14 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
         onClick={() => setToggleMenu(!toggleMenu)}
         onMouseEnter={() => onCursor('tw-hovered')}
         onMouseLeave={onCursor}
-        variants={childVariants}
+        variants={headerVariants}
       >
         <button className="border-none bg-none outline-none ring-0 focus:outline-none tw-link">
           Menú
         </button>
       </motion.div>
 
-      <motion.div className="hidden lg:block" variants={childVariants}>
+      <motion.div className="hidden lg:block" variants={headerVariants}>
         <ul className="flex lg:space-x-14 2x:space-x-16">
           {MENU_LINKS &&
             MENU_LINKS.map((link, index) => (
