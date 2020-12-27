@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 
 import { scrollVariants } from '@/utils/framer';
 
@@ -28,15 +28,15 @@ const Accordion = ({ table, index, onCursor }) => {
   return (
     <motion.li
       layout
-      onClick={toggleOpen}
       ref={contentRef}
       initial="initial"
       animate={animation}
       variants={scrollVariants}
+      onClick={toggleOpen}
     >
       <motion.div
-        className="flex justify-between items-center"
         layout
+        className="flex justify-between items-center"
         onClick={() => setIsExpanded(isExpanded ? false : index)}
         onMouseEnter={() => onCursor('tw-hovered')}
         onMouseLeave={onCursor}
@@ -60,8 +60,8 @@ const Accordion = ({ table, index, onCursor }) => {
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            className="tw-separator-t-sm"
             layout
+            className="tw-separator-t-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

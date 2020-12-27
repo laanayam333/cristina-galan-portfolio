@@ -7,7 +7,8 @@ const Table = ({ rows }) => {
     <>
       <motion.table
         className="w-full origin-top"
-        layout
+        intial="initial"
+        animate="animate"
         variants={tableVariants}
       >
         <tbody>

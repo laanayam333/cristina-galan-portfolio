@@ -27,9 +27,9 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
   return (
     <motion.main
       className="tw-separator-b"
-      exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
+      exit={{ opacity: 0 }}
       variants={pageVariants}
     >
       <Head>
@@ -42,27 +42,24 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
         />
       </Head>
 
-      <article initial="initial" animate="animate" exit="exit">
+      <motion.article initial="initial" animate="animate" exit="exit">
         <Hero data={aboutPageData} />
 
+        <Bio aboutPageData={aboutPageData} />
+
         <AnimateSharedLayout>
-          <Bio aboutPageData={aboutPageData} />
+          <motion.ul
+            className="flex flex-col space-y-12 lg:space-y-20 2xl:space-y-24 tw-container"
+            layout
+          >
+            {tableData.map((table, index) => (
+              <Accordion key={index} table={table} onCursor={onCursor} />
+            ))}
 
-          <section className="tw-container">
-            <motion.ul
-              className="flex flex-col space-y-12 lg:space-y-20 2xl:space-y-24"
-              layout
-              initial={{ borderRadius: 10 }}
-            >
-              {tableData.map((table, index) => (
-                <Accordion key={index} table={table} onCursor={onCursor} />
-              ))}
-
-              <Clients clientsData={clientsData} onCursor={onCursor} />
-            </motion.ul>
-          </section>
+            <Clients clientsData={clientsData} onCursor={onCursor} />
+          </motion.ul>
         </AnimateSharedLayout>
-      </article>
+      </motion.article>
     </motion.main>
   );
 }

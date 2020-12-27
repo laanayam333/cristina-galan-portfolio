@@ -27,17 +27,17 @@ const Clients = ({ clientsData, onCursor }) => {
 
   return (
     <>
-      <motion.div
+      <motion.li
         layout
+        ref={contentRef}
         initial="initial"
         animate={animation}
         variants={scrollVariants}
-        ref={contentRef}
         onClick={toggleOpen}
       >
         <motion.div
-          className="flex justify-between items-center"
           layout
+          className="flex justify-between items-center"
           onClick={() => setIsExpanded(isExpanded ? false : true)}
           onMouseEnter={() => onCursor('tw-hovered')}
           onMouseLeave={onCursor}
@@ -63,6 +63,7 @@ const Clients = ({ clientsData, onCursor }) => {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
+              layout
               className="tw-separator-t-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -83,7 +84,7 @@ const Clients = ({ clientsData, onCursor }) => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </motion.li>
     </>
   );
 };

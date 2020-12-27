@@ -24,6 +24,7 @@ const Bio = ({ aboutPageData }) => {
       ref={contentRef}
       initial="initial"
       animate={animation}
+      exit="exit"
       variants={scrollVariants}
     >
       <div className="w-full lg:w-2/3">
