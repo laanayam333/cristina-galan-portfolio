@@ -6,6 +6,9 @@ import { MENU_LINKS } from '@/utils/constants';
 
 import List from '@/components/Nav/Links';
 
+import CloseIcon from '@/components/Icons/CloseIcon';
+import BackIcon from '../Icons/BackIcon';
+
 const Menu = ({ toggleMenu, setToggleMenu, onCursor, x, y }) => {
   return (
     <>
@@ -20,18 +23,19 @@ const Menu = ({ toggleMenu, setToggleMenu, onCursor, x, y }) => {
               custom={toggleMenu}
               variants={menuVariants}
             >
-              <header className="fixed top-0 left-0 right-0 flex justify-between px-5 py-10 h-20">
+              <header className="fixed top-0 left-0 right-0 flex items-center justify-between px-5 py-10 h-20">
                 <div onClick={() => setToggleMenu(!toggleMenu)}>
                   <Link href="/">
-                    <a className="tw-link text-white dark:text-black">
-                      {`<< Proyectos`}
+                    <a className="flex tw-link space-x-2.5 text-white dark:text-black">
+                      <BackIcon />
+                      <span>Home</span>
                     </a>
                   </Link>
                 </div>
 
                 <div onClick={() => setToggleMenu(!toggleMenu)}>
                   <button className="origin-center border-none bg-none focus:outline-none tw-link text-white dark:text-black">
-                    Cerrar
+                    <CloseIcon />
                   </button>
                 </div>
               </header>

@@ -1,7 +1,7 @@
 //! IMPORT
 
 //* Dependencies
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { setCookie } from 'nookies';
 import { motion } from 'framer-motion';
@@ -14,6 +14,8 @@ import {
 import { parentVariants, headerVariants } from '@/utils/framer';
 
 import { MENU_LINKS } from '@/utils/constants';
+
+import MenuIcon from '@/components/Icons/MenuIcon';
 
 //! MAIN LOGIC
 
@@ -82,7 +84,7 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
         variants={headerVariants}
       >
         <button className="border-none bg-none outline-none ring-0 focus:outline-none tw-link">
-          Menú
+          <MenuIcon />
         </button>
       </motion.div>
 

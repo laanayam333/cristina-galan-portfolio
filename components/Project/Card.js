@@ -15,14 +15,14 @@ const Card = ({ project }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
   return (
     <motion.div
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

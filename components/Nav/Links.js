@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Links = ({ title, id, toggleMenu, setToggleMenu }) => {
   return (
     <motion.li
-      initial="hidden"
-      animate="visible"
+      initial="initial"
+      animate="animate"
       exit="exit"
       onClick={() => setToggleMenu(!toggleMenu)}
     >

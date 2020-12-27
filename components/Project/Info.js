@@ -13,7 +13,7 @@ const Info = ({ projectData, agency, client }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -21,7 +21,7 @@ const Info = ({ projectData, agency, client }) => {
     <motion.div
       className="col-span-1 col-start-2"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

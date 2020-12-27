@@ -21,7 +21,7 @@ const Clients = ({ clientsData, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -29,7 +29,7 @@ const Clients = ({ clientsData, onCursor }) => {
     <>
       <motion.div
         layout
-        initial="hidden"
+        initial="initial"
         animate={animation}
         variants={scrollVariants}
         ref={contentRef}

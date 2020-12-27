@@ -13,7 +13,7 @@ const Content = ({ projectData }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -23,7 +23,7 @@ const Content = ({ projectData }) => {
         <motion.div
           className="col-span-2 col-start-1 lg:col-span-2 lg:col-start-3 row-span-full row-start-1 tw-paragraph"
           ref={contentRef}
-          initial="hidden"
+          initial="initial"
           animate={animation}
           variants={scrollVariants}
         >

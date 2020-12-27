@@ -1,5 +1,9 @@
 @tailwind base;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   cursor: none;
   scrollbar-width: none; /* Firefox */

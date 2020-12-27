@@ -18,7 +18,7 @@ const Footer = ({ onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -26,7 +26,7 @@ const Footer = ({ onCursor }) => {
     <motion.footer
       className="mb-5 lg:mb-7 2xl:mb-8 tw-container  tw-separator-t-lg"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

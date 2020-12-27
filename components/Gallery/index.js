@@ -24,24 +24,23 @@ const Gallery = ({ gallery, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
   return (
     <>
       {gallery && (
-        <section>
+        <motion.section
+          id="gallery"
+          ref={contentRef}
+          initial="initial"
+          animate={animation}
+          variants={scrollVariants}
+        >
           <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t py-10 lg:py-14 2xl:py-16 tw-container-sm bg-gray-100 dark:bg-gray-900">
             {gallery.fields.map((elm, index) => (
-              <motion.div
-                className="flex flex-col justify-center"
-                key={index}
-                ref={contentRef}
-                initial="hidden"
-                animate={animation}
-                variants={scrollVariants}
-              >
+              <div className="flex flex-col justify-center" key={index}>
                 <Image
                   key={index}
                   src={elm.photo.url}
@@ -55,7 +54,7 @@ const Gallery = ({ gallery, onCursor }) => {
                   onMouseEnter={() => onCursor('tw-hovered')}
                   onMouseLeave={onCursor}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -66,7 +65,7 @@ const Gallery = ({ gallery, onCursor }) => {
             handleModalToggle={handleModalToggle}
             onCursor={onCursor}
           />
-        </section>
+        </motion.section>
       )}
     </>
   );

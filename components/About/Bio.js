@@ -14,7 +14,7 @@ const Bio = ({ aboutPageData }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -22,7 +22,7 @@ const Bio = ({ aboutPageData }) => {
     <motion.section
       className="flex flex-col lg:flex-row min-h-screen tw-container mt-28 lg:mt-0 lg:items-center lg:justify-center lg:space-x-24"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

@@ -6,6 +6,7 @@ import { scrollVariants } from '@/utils/framer';
 
 const CTA = ({ cta }) => {
   const animation = useAnimation();
+
   const [contentRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.25
@@ -13,7 +14,7 @@ const CTA = ({ cta }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -21,13 +22,13 @@ const CTA = ({ cta }) => {
     <motion.div
       className="overflow-hidden"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >
       {cta.map((paragraph, index) => (
         <p
-          className="whitespace-pre tw-paragraph text-lg lg:text-5xl 2xl:text-6xl"
+          className="whitespace-pre tw-paragraph text-lg lg:text-3xl 2xl:text-4xl"
           key={index}
         >
           {paragraph.text}

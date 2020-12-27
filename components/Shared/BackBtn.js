@@ -16,7 +16,7 @@ const Footer = ({ slug, cta, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -24,7 +24,7 @@ const Footer = ({ slug, cta, onCursor }) => {
     <motion.footer
       className="tw-container-sm tw-separator-t tw-link"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

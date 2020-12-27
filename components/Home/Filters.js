@@ -27,7 +27,7 @@ const Filters = ({
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -36,7 +36,7 @@ const Filters = ({
       className="tw-container tw-separator-t"
       ref={contentRef}
       animate={animation}
-      initial="hidden"
+      initial="initial"
       variants={scrollVariants}
     >
       <div className="flex justify-between">

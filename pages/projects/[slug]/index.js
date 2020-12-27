@@ -56,7 +56,7 @@ export default function ProjectPage({
 
       <Hero data={projectData} />
 
-      <section className="grid grid-rows-2 lg:grid-cols-4 lg:grid-rows-none gap-10 lg:gap-14 2xl:gap-16 tw-container tw-separator-t">
+      <section className="grid grid-rows-2 lg:grid-cols-4 lg:grid-rows-none gap-10 lg:gap-14 2xl:gap-16 tw-container tw-separator-t tw-separator-b">
         <Team projectData={projectData} team={team} />
         <Info projectData={projectData} agency={agency} client={client} />
         <Content projectData={projectData} />

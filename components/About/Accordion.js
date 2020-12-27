@@ -21,7 +21,7 @@ const Accordion = ({ table, index, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -30,7 +30,7 @@ const Accordion = ({ table, index, onCursor }) => {
       layout
       onClick={toggleOpen}
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

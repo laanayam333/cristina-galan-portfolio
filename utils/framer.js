@@ -89,19 +89,6 @@ export const tableVariants = {
   }
 };
 
-export const scrollVariants = {
-  hidden: {
-    opacity: 0
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      ...scrollTransition,
-      staggerChildren: 0.3
-    }
-  }
-};
-
 export const menuVariants = {
   initial: { x: '-100%' },
   animate: (custom) => ({
@@ -115,4 +102,17 @@ export const modalVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 }
+};
+
+export const scrollVariants = {
+  initial: {
+    opacity: 0
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      ...scrollTransition,
+      staggerChildren: 0.3
+    }
+  }
 };

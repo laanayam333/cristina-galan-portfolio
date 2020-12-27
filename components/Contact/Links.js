@@ -13,7 +13,7 @@ const Links = ({ body, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -21,7 +21,7 @@ const Links = ({ body, onCursor }) => {
     <motion.ul
       className="flex space-x-12 lg:space-x-24 2xl:space-x-28 tw-separator-t-sm"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >
@@ -32,7 +32,7 @@ const Links = ({ body, onCursor }) => {
           onMouseLeave={onCursor}
         >
           <a
-            className="text-base lg:text-2xl 2xl:text-3xl tw-link"
+            className="text-base lg:text-xl 2xl:text-2xl tw-link"
             href={link.primary.link.url}
             target="_blank"
             rel="noopener"

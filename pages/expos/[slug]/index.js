@@ -28,7 +28,7 @@ export default function ExpoPage({ expo, gallery, video, cta }) {
 
   return (
     <motion.main
-      className="tw-container tw-separator-b"
+      className="tw-separator-b"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
@@ -44,13 +44,11 @@ export default function ExpoPage({ expo, gallery, video, cta }) {
         />
       </Head>
 
-      <Hero data={expo} onCursor={onCursor} />
+      <Hero data={expo} onCursor={onCursor} video={video} gallery={gallery} />
 
-      <div className="flex flex-col">
-        <Gallery gallery={gallery} onCursor={onCursor} />
+      <Video video={video} />
 
-        <Video video={video} />
-      </div>
+      <Gallery gallery={gallery} onCursor={onCursor} />
 
       <BackBtn cta={cta} slug={'/expos'} onCursor={onCursor} />
     </motion.main>

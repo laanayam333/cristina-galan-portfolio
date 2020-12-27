@@ -13,7 +13,7 @@ const Team = ({ projectData, team }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -21,7 +21,7 @@ const Team = ({ projectData, team }) => {
     <motion.section
       className="col-span-1 col-start-1 w-full"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
     >

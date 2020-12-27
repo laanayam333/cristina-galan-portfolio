@@ -16,7 +16,7 @@ const Video = ({ video }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -24,9 +24,10 @@ const Video = ({ video }) => {
     <>
       {video && (
         <motion.section
-          className="flex items-center h-screen lg:py-56 2xl:py-64 tw-container"
+          className="flex items-center h-screen lg:py-28 2xl:py-32 bg-gray-100 dark:bg-gray-900 tw-container-sm"
+          id="player"
           ref={contentRef}
-          initial="hidden"
+          initial="initial"
           animate={animation}
           variants={scrollVariants}
         >

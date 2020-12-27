@@ -15,7 +15,7 @@ const Card = ({ expo, onCursor }) => {
 
   useEffect(() => {
     if (inView) {
-      animation.start('visible');
+      animation.start('animate');
     }
   }, [animation, inView]);
 
@@ -23,7 +23,7 @@ const Card = ({ expo, onCursor }) => {
     <motion.li
       className="w-full h-40 lg:h-56 2xl:h-64"
       ref={contentRef}
-      initial="hidden"
+      initial="initial"
       animate={animation}
       variants={scrollVariants}
       onMouseEnter={() => onCursor('tw-hovered')}

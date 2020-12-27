@@ -12,6 +12,12 @@ import '@/styles/index.css';
 // //   console.log(metric);
 // // }
 
+function handleExitComplete() {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0 });
+  }
+}
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
@@ -19,7 +25,7 @@ function MyApp({ Component, pageProps }) {
     // // <CookiesProvider>
     <GlobalProvider>
       <Layout>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
           <Head>
             <meta
               name="viewport"

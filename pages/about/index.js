@@ -42,7 +42,7 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
         />
       </Head>
 
-      <article initial="hidden" animate="visible" exit="exit">
+      <article initial="initial" animate="animate" exit="exit">
         <Hero data={aboutPageData} />
 
         <AnimateSharedLayout>
