@@ -5,6 +5,7 @@ body {
   scrollbar-width: none; /* Firefox */
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
 
   @apply w-full h-full overflow-x-hidden overscroll-none font-core leading-none text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
 }
@@ -68,8 +69,16 @@ body {
 
 /*  //! GLOBAL !// */
 
-.tw-container {
+.tw-container-sm {
   @apply px-5 lg:px-14 2xl:px-16;
+}
+
+.tw-container {
+  @apply px-10 lg:px-56 2xl:px-64;
+}
+
+.tw-separator-t-lg {
+  @apply mt-40 lg:mt-56 2xl:mt-64;
 }
 
 .tw-separator-t {
@@ -133,11 +142,11 @@ body {
 }
 
 .tw-card-title {
-  @apply font-bold text-2xl lg:text-5xl 2xl:text-6xl uppercase;
+  @apply font-bold text-2xl lg:text-4xl 2xl:text-5xl uppercase;
 }
 
 .tw-card-text {
-  @apply font-core text-lg lg:text-2xl 2xl:text-3xl text-gray-700 dark:text-gray-400 tw-animation;
+  @apply font-core text-base lg:text-xl 2xl:text-2xl text-gray-700 dark:text-gray-400 tw-animation;
 }
 
 .tw-link {

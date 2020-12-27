@@ -45,10 +45,10 @@ export default function AboutPage({ aboutPageData, tableData, clientsData }) {
       <article initial="hidden" animate="visible" exit="exit">
         <Hero data={aboutPageData} />
 
-        <Bio aboutPageData={aboutPageData} />
-
         <AnimateSharedLayout>
-          <section className="tw-container tw-separator-t">
+          <Bio aboutPageData={aboutPageData} />
+
+          <section className="tw-container">
             <motion.ul
               className="flex flex-col space-y-12 lg:space-y-20 2xl:space-y-24"
               layout

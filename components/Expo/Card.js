@@ -21,7 +21,7 @@ const Card = ({ expo, onCursor }) => {
 
   return (
     <motion.li
-      className="w-full h-48 lg:h-72 2xl:h-80"
+      className="w-full h-40 lg:h-56 2xl:h-64"
       ref={contentRef}
       initial="hidden"
       animate={animation}
@@ -41,7 +41,7 @@ const Card = ({ expo, onCursor }) => {
             />
 
             <div
-              className="relative w-full h-full z-99 flex justify-start items-end p-2 lg:p-4 2xl:p-6 tw-card-title text-white hover:opacity-0 tw-animation"
+              className="relative w-full h-full z-99 flex justify-start items-end p-2.5 lg:p-3.5 2xl:p-4 tw-card-title text-white dark:text-black hover:opacity-0 tw-animation"
               style={{ backgroundColor: `${expo.node.card_color}` }}
             >
               {expo.node.location[0].text}

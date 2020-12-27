@@ -39,7 +39,7 @@ const Team = ({ projectData, team }) => {
           <h3 className="tw-label tw-pair">Equipo</h3>
 
           {team.fields.map((member, index) => (
-            <div className="tw-pair" tw-key={index}>
+            <div className="tw-pair" key={index}>
               <p className="tw-key">{member.member_role[0].text}</p>
               <p className="tw-value">{member.member_name[0].text}</p>
             </div>

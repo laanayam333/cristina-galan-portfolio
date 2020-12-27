@@ -43,7 +43,7 @@ const Clients = ({ clientsData, onCursor }) => {
           onMouseLeave={onCursor}
         >
           <h2
-            className={`tw-subheading text-2xl lg:text-5xl 2xl:text-6xl tw-animation ${
+            className={`tw-subheading text-xl lg:text-5xl 2xl:text-6xl tw-animation ${
               isExpanded ? 'text-red-400' : ''
             }`}
           >

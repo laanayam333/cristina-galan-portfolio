@@ -1,7 +1,7 @@
 const MinusIcon = () => {
   return (
     <svg
-      className="w-12 lg:w-20 2xl:w-24 stroke-2"
+      className="w-8 lg:w-20 2xl:w-24 stroke-2"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

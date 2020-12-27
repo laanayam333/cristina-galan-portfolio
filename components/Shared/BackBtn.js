@@ -1,26 +1,45 @@
-import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+import { scrollVariants } from '@/utils/framer';
+
 import BackIcon from '@/components/Icons/BackIcon';
 
-const BackBtn = () => {
-  const router = useRouter();
-  const isHome = router.pathname === '/';
+const Footer = ({ slug, cta, onCursor }) => {
+  const animation = useAnimation();
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.25
+  });
 
-  const goBack = (event) => {
-    event.preventDefault();
-    router.back();
-  };
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible');
+    }
+  }, [animation, inView]);
 
   return (
-    <div>
-      {!isHome && (
-        <div className={styles.back}>
-          <a href="#" onClick={goBack}>
-            <BackIcon />
-          </a>
-        </div>
-      )}
-    </div>
+    <motion.footer
+      className="tw-container-sm tw-separator-t tw-link"
+      ref={contentRef}
+      initial="hidden"
+      animate={animation}
+      variants={scrollVariants}
+    >
+      <Link href={slug}>
+        <a
+          className="flex items-center space-x-2 lg:space-x-4 2xl:space-x-5"
+          onMouseEnter={() => onCursor('tw-hovered')}
+          onMouseLeave={onCursor}
+        >
+          <BackIcon />
+          <h4>{`${cta}`}</h4>
+        </a>
+      </Link>
+    </motion.footer>
   );
 };
 
-export default BackBtn;
+export default Footer;

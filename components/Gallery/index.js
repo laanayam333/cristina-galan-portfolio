@@ -18,7 +18,8 @@ const Gallery = ({ gallery, onCursor }) => {
 
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
-    triggerOnce: true
+    triggerOnce: true,
+    threshold: 0.25
   });
 
   useEffect(() => {
@@ -29,41 +30,40 @@ const Gallery = ({ gallery, onCursor }) => {
 
   return (
     <>
-      {gallery && (
-        <motion.section
-          className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t"
-          ref={contentRef}
-          initial="hidden"
-          animate={animation}
-          variants={scrollVariants}
-        >
-          {gallery.fields.map((elm, index) => (
-            <div className="flex flex-col justify-center tw-placeholder">
-              <Image
-                key={index}
-                src={elm.photo.url}
-                alt={elm.photo.alt}
-                layout="responsive"
-                objectFit="cover"
-                quality={100}
-                width={elm.photo.dimensions.width}
-                height={elm.photo.dimensions.height}
-                onClick={() => handleModalToggle(index)}
-                onMouseEnter={() => onCursor('tw-hovered')}
-                onMouseLeave={onCursor}
-              />
-            </div>
-          ))}
+      <section className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t py-10 lg:py-14 2xl:py-16 tw-container-sm bg-gray-100 dark:bg-gray-900">
+        {gallery.fields.map((elm, index) => (
+          <motion.div
+            className="flex flex-col justify-center"
+            key={index}
+            ref={contentRef}
+            initial="hidden"
+            animate={animation}
+            variants={scrollVariants}
+          >
+            <Image
+              key={index}
+              src={elm.photo.url}
+              alt={elm.photo.alt}
+              layout="responsive"
+              objectFit="cover"
+              quality={75}
+              width={elm.photo.dimensions.width}
+              height={elm.photo.dimensions.height}
+              onClick={() => handleModalToggle(index)}
+              onMouseEnter={() => onCursor('tw-hovered')}
+              onMouseLeave={onCursor}
+            />
+          </motion.div>
+        ))}
+      </section>
 
-          <Modal
-            gallery={gallery}
-            selected={selected}
-            isModalOpen={isModalOpen}
-            handleModalToggle={handleModalToggle}
-            onCursor={onCursor}
-          />
-        </motion.section>
-      )}
+      <Modal
+        gallery={gallery}
+        selected={selected}
+        isModalOpen={isModalOpen}
+        handleModalToggle={handleModalToggle}
+        onCursor={onCursor}
+      />
     </>
   );
 };

@@ -37,7 +37,7 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
 
   return (
     <motion.header
-      className="absolute top-0 right-0 left-0 z-99 flex justify-between items-center w-full h-20 lg:h-28 2xl:h-32 tw-container"
+      className="absolute top-0 right-0 left-0 z-99 flex justify-between items-center w-full h-20 lg:h-28 2xl:h-32 tw-container-sm"
       variants={parentVariants}
       initial="initial"
       animate="animate"

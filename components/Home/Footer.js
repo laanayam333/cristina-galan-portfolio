@@ -5,7 +5,10 @@ import { useAnimation } from 'framer-motion';
 
 import { scrollVariants } from '@/utils/framer';
 
-const HomeFooter = ({ onCursor }) => {
+const Footer = ({ onCursor }) => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+
   const animation = useAnimation();
 
   const [contentRef, inView] = useInView({
@@ -21,59 +24,81 @@ const HomeFooter = ({ onCursor }) => {
 
   return (
     <motion.footer
-      className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 h-64 lg:h-72 2xl:h-80 tw-container "
+      className="mb-5 lg:mb-7 2xl:mb-8 tw-container  tw-separator-t-lg"
       ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
     >
-      <div className="text-center lg:text-left">
-        <a
-          className="tw-link"
-          href="mailto:cristina.galan.vargas@hotmail.com"
-          onMouseEnter={() => onCursor('tw-hovered')}
-          onMouseLeave={onCursor}
-        >
-          cristina.galan.vargas@hotmail.com
-        </a>
-      </div>
+      <motion.div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 h-40 lg:h-58 2xl:h-64">
+        <div className="text-center lg:text-left">
+          <a
+            className="tw-link"
+            href="mailto:cristina.galan.vargas@hotmail.com"
+            onMouseEnter={() => onCursor('tw-hovered')}
+            onMouseLeave={onCursor}
+          >
+            cristina.galan.vargas@hotmail.com
+          </a>
+        </div>
 
-      <div className="flex lg:flex-col space-x-8 lg:space-x-0 lg:space-y-4 2xl:space-y-6 lg:text-right">
-        <a
-          className="tw-link"
-          onMouseEnter={() => onCursor('tw-hovered')}
-          onMouseLeave={onCursor}
-          href="https://www.instagram.com/cristina_galan_vargas/?hl=en"
-          target="_blank"
-          rel="noopener"
-        >
-          Instagram
-        </a>
+        <div className="flex lg:flex-col justify-between w-full mt-5 lg:mt-0 lg:space-y-7 2xl:space-y-8 lg:text-right">
+          <a
+            className="tw-link"
+            onMouseEnter={() => onCursor('tw-hovered')}
+            onMouseLeave={onCursor}
+            href="https://www.instagram.com/cristina_galan_vargas/?hl=en"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram
+          </a>
 
-        <a
-          className="tw-link"
-          onMouseEnter={() => onCursor('tw-hovered')}
-          onMouseLeave={onCursor}
-          href="https://www.linkedin.com/in/cristina-gal%C3%A1n-vargas-b878b598/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
+          <a
+            className="tw-link"
+            onMouseEnter={() => onCursor('tw-hovered')}
+            onMouseLeave={onCursor}
+            href="https://www.linkedin.com/in/cristina-gal%C3%A1n-vargas-b878b598/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
 
-        <a
-          className="tw-link"
-          onMouseEnter={() => onCursor('tw-hovered')}
-          onMouseLeave={onCursor}
-          href="https://vimeo.com/user52102497"
-          target="_blank"
-          rel="noopener"
-        >
-          Vimeo
-        </a>
+          <a
+            className="tw-link"
+            onMouseEnter={() => onCursor('tw-hovered')}
+            onMouseLeave={onCursor}
+            href="https://vimeo.com/user52102497"
+            target="_blank"
+            rel="noopener"
+          >
+            Vimeo
+          </a>
+        </div>
+      </motion.div>
+
+      <div className="text-center tw-separator-t">
+        <small className="text-xs lg:text-sm 2xl:text-base text-gray-400 dark:text-gray-700 tw-animation">
+          © {year} Cristina Galán.{' '}
+          <span>
+            Website by{' '}
+            <a
+              className="italic"
+              onMouseEnter={() => onCursor('tw-hovered')}
+              onMouseLeave={onCursor}
+              href="https://github.com/laanayam333"
+              target="_blank"
+              rel="noopener"
+            >
+              Brother Sailor
+            </a>
+            .
+          </span>
+        </small>
       </div>
     </motion.footer>
   );
 };
 
-export default HomeFooter;
+export default Footer;

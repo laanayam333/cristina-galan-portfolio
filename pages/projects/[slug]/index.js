@@ -6,7 +6,7 @@ import {
   useGlobalDispatchContext
 } from '@/utils/context/global-context';
 
-import { getAllProjectsWithSlug, getProject } from '@/lib/api';
+import { getAllProjectsWithSlug, getProject, getHomePage } from '@/lib/api';
 import { pageVariants } from '@/utils/framer';
 import { WEB_NAME } from '@/utils/constants';
 
@@ -16,7 +16,7 @@ import Content from '@/components/Project/Content';
 import Team from '@/components/Project/Team';
 import Gallery from '@/components/Gallery';
 import Video from '@/components/Shared/Video';
-import Footer from '@/components/Shared/Footer';
+import BackBtn from '@/components/Shared/BackBtn';
 
 export default function ProjectPage({
   projectData,
@@ -24,7 +24,8 @@ export default function ProjectPage({
   client,
   team,
   video,
-  gallery
+  gallery,
+  cta
 }) {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
@@ -37,7 +38,7 @@ export default function ProjectPage({
 
   return (
     <motion.main
-      className="tw-container tw-separator-b"
+      className="tw-separator-b"
       exit={{ opacity: 0 }}
       initial="initial"
       animate="animate"
@@ -55,31 +56,29 @@ export default function ProjectPage({
 
       <Hero data={projectData} />
 
-      <section className="grid grid-rows-2 lg:grid-cols-4 lg:grid-rows-none gap-10 lg:gap-14 2xl:gap-16 tw-separator-t-sm">
+      <section className="grid grid-rows-2 lg:grid-cols-4 lg:grid-rows-none gap-10 lg:gap-14 2xl:gap-16 tw-container tw-separator-t">
         <Team projectData={projectData} team={team} />
         <Info projectData={projectData} agency={agency} client={client} />
         <Content projectData={projectData} />
       </section>
 
-      <div>
-        <Gallery gallery={gallery} onCursor={onCursor} />
-      </div>
+      <Gallery gallery={gallery} onCursor={onCursor} />
 
-      <div className="tw-separator-t">
-        <Video video={video} />
-      </div>
+      <Video video={video} />
 
-      <Footer cta="Vuelve a proyectos" slug={'/'} onCursor={onCursor} />
+      <BackBtn cta={cta} slug={'/'} onCursor={onCursor} />
     </motion.main>
   );
 }
 
 export const getStaticProps = async ({ params }) => {
   const projectData = (await getProject(params.slug)) || {};
+  const data = await getHomePage();
 
   return {
     props: {
       projectData,
+      cta: data?.node.cta[0].text,
 
       project: projectData?.project ?? {},
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
-import { getAllExposWithSlug, getExpo } from '@/lib/api';
+import { getAllExposWithSlug, getExpo, getExpoPage } from '@/lib/api';
 
 import { pageVariants } from '@/utils/framer';
 import { WEB_NAME } from '@/utils/constants';
@@ -14,9 +14,9 @@ import {
 import Hero from '@/components/Expo/Hero';
 import Video from '@/components/Shared/Video';
 import Gallery from '@/components/Gallery';
-import Footer from '@/components/Shared/Footer';
+import BackBtn from '@/components/Shared/BackBtn';
 
-export default function ExpoPage({ expo, gallery, video }) {
+export default function ExpoPage({ expo, gallery, video, cta }) {
   const dispatch = useGlobalDispatchContext();
   const { cursorStyles } = useGlobalStateContext();
 
@@ -52,7 +52,7 @@ export default function ExpoPage({ expo, gallery, video }) {
         <Video video={video} />
       </div>
 
-      <Footer cta="Vuelve a expos" slug={'/expos'} onCursor={onCursor} />
+      <BackBtn cta={cta} slug={'/expos'} onCursor={onCursor} />
     </motion.main>
   );
 }
@@ -60,9 +60,11 @@ export default function ExpoPage({ expo, gallery, video }) {
 export const getStaticProps = async ({ params }) => {
   const expoData = (await getExpo(params.slug)) || {};
 
+  const data = await getExpoPage();
+
   return {
     props: {
-      expoData,
+      cta: data?.node.cta[0].text,
       expo: expoData?.expo ?? {},
       gallery:
         expoData?.expo?.body?.filter((elm) => elm.type === 'gallery')[0] ??
@@ -80,7 +82,9 @@ export const getStaticPaths = async () => {
     paths:
       expos?.map((elm) => {
         return {
-          params: { slug: elm.node._meta.uid }
+          params: {
+            slug: elm.node._meta.uid
+          }
         };
       }) || [],
     fallback: false

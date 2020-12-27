@@ -20,13 +20,22 @@ const Bio = ({ aboutPageData }) => {
 
   return (
     <motion.section
-      className="grid lg:grid-cols-3 gap-y-20 lg:gap-y-0 lg:gap-x-28 2xl:gap-x-32 justify-center items-center min-h-screen tw-container"
+      className="flex flex-col lg:flex-row min-h-screen tw-container mt-28 lg:mt-0 lg:items-center lg:justify-center lg:space-x-24"
       ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={scrollVariants}
     >
-      <div className="col-span-1 lg:col-span-1 transform skew-x-3 px-4 lg:px-0">
+      <div className="w-full lg:w-2/3">
+        {aboutPageData.bio &&
+          aboutPageData.bio.map((paragraph, index) => (
+            <p className="tw-paragraph" key={index}>
+              {paragraph.text}
+            </p>
+          ))}
+      </div>
+
+      <div className="w-full lg:w-1/3 transform skew-x-3 skew-y-3 px-4 lg:px-0 tw-separator-t-sm">
         <Image
           src={aboutPageData.artist_photo.url}
           alt={aboutPageData.artist_photo.alt}
@@ -34,15 +43,6 @@ const Bio = ({ aboutPageData }) => {
           width={aboutPageData.artist_photo.dimensions.width}
           height={aboutPageData.artist_photo.dimensions.height}
         />
-      </div>
-
-      <div className=" col-span-1 lg:col-span-2">
-        {aboutPageData.bio &&
-          aboutPageData.bio.map((paragraph, index) => (
-            <p className="tw-paragraph" key={index}>
-              {paragraph.text}
-            </p>
-          ))}
       </div>
     </motion.section>
   );
