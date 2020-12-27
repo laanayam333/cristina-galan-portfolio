@@ -38,7 +38,7 @@ const Gallery = ({ gallery, onCursor }) => {
           animate={animation}
           variants={scrollVariants}
         >
-          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t py-10 lg:py-14 2xl:py-16 tw-container-sm bg-gray-100 dark:bg-gray-900">
+          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14 2xl:gap-16 tw-separator-t py-10 lg:py-14 2xl:py-16 tw-container-sm">
             {gallery.fields.map((elm, index) => (
               <div className="flex flex-col justify-center" key={index}>
                 <Image

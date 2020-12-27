@@ -24,7 +24,7 @@ const Video = ({ video }) => {
     <>
       {video && (
         <motion.section
-          className="flex items-center h-screen lg:py-28 2xl:py-32 bg-gray-100 dark:bg-gray-900 tw-container-sm"
+          className="flex items-center h-screen lg:py-28 2xl:py-32 tw-container-sm"
           id="player"
           ref={contentRef}
           initial="initial"
