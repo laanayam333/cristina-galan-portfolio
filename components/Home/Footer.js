@@ -87,11 +87,11 @@ const Footer = ({ onCursor }) => {
               className="italic"
               onMouseEnter={() => onCursor('tw-hovered')}
               onMouseLeave={onCursor}
-              href="https://github.com/laanayam333"
+              href="https://github.com/CtrlZ-Studio"
               target="_blank"
               rel="noopener"
             >
-              Brother Sailor
+              Ctrl-Z Studio
             </a>
             .
           </span>

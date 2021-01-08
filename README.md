@@ -15,4 +15,6 @@ Portfolio website created for the photographer and audiovisual creator Cristina 
 
 ## Authors
 
-* **Luis Anaya (Brother Sailor)** - [laanayam333](https://github.com/laanayam333)
+* **Ctrl-Z Studio** - [CtrlZ-Studio](https://github.com/CtrlZ-Studio)
+* **Luis Anaya** - [laanayam333](https://github.com/laanayam333)
+* **Carlos Kompier** - [ckompier](https://github.com/ckompier)
