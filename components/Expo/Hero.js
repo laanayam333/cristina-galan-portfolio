@@ -7,7 +7,7 @@ import DownIcon from '@/components/Icons/DownIcon';
 const Hero = ({ data, onCursor, video, gallery }) => {
   return (
     <motion.section
-      className="flex flex-col justify-center h-screen overflow-hidden tw-container"
+      className="relative flex flex-col h-screen overflow-hidden tw-container justify-center"
       variants={parentVariants}
     >
       <motion.div variants={childVariants}>
@@ -30,7 +30,7 @@ const Hero = ({ data, onCursor, video, gallery }) => {
       </motion.div>
 
       <motion.div
-        className="tw-separator-t-xxs self-center"
+        className="absolute flex justify-center mx-auto right-0 left-0 lg:right-1/2 lg:left-1/2 bottom-5 lg:bottom-14 2xl:bottom-16 text-gray-400 hover:text-red-400"
         variants={childVariants}
         onMouseEnter={() => onCursor('tw-hovered')}
         onMouseLeave={onCursor}

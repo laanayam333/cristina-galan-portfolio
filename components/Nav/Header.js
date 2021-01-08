@@ -16,6 +16,7 @@ import { parentVariants, headerVariants } from '@/utils/framer';
 import { MENU_LINKS } from '@/utils/constants';
 
 import MenuIcon from '@/components/Icons/MenuIcon';
+import ActiveLink from '@/components/Nav/ActiveLink';
 
 //! MAIN LOGIC
 
@@ -97,9 +98,9 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu }) => {
                 onMouseEnter={() => onCursor('tw-hovered')}
                 onMouseLeave={onCursor}
               >
-                <Link href={`/${link.id}`}>
+                <ActiveLink href={`/${link.id}`}>
                   <a className="tw-link">{link.title}</a>
-                </Link>
+                </ActiveLink>
               </li>
             ))}
         </ul>

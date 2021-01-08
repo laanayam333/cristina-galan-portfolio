@@ -33,7 +33,8 @@ const Filters = ({
 
   return (
     <motion.section
-      className="tw-container tw-separator-t"
+      id="projects"
+      className="tw-container tw-separator-t pt-5 lg:pt-14 2xl:pt-16"
       ref={contentRef}
       animate={animation}
       initial="initial"

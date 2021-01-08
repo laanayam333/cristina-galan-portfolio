@@ -178,6 +178,10 @@ body {
   @apply bg-black dark:bg-white;
 }
 
+.selected {
+  @apply text-red-400;
+}
+
 /*  //!  !// */
 
 .about-row {

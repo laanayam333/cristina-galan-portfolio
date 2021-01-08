@@ -1,29 +1,45 @@
-import React, { Children } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 
-const ActiveLink = ({ children, activeClassName, ...props }) => {
-  const { asPath } = useRouter();
-  const child = Children.only(children);
-  const childClassName = child.props.className || '';
+const ActiveLink = ({ href, children }) => {
+  const router = useRouter();
 
-  const className =
-    asPath === props.href || asPath === props.as
-      ? `${childClassName} ${activeClassName}`.trim()
-      : childClassName;
+  let className = children.props.className || '';
+  if (router.pathname === href) {
+    className = `${className} selected`;
+  }
 
-  return (
-    <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null
-      })}
-    </Link>
-  );
-};
-
-ActiveLink.propTypes = {
-  activeClassName: PropTypes.string.isRequired
+  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
 };
 
 export default ActiveLink;
+// // import React, { Children } from 'react';
+// // import Link from 'next/link';
+// // import { useRouter } from 'next/router';
+// // import PropTypes from 'prop-types';
+
+// // const ActiveLink = ({ children, activeClassName, ...props }) => {
+// //   const { asPath } = useRouter();
+// //   const child = Children.only(children);
+// //   const childClassName = child.props.className || '';
+
+// //   const className =
+// //     asPath === props.href || asPath === props.as
+// //       ? `${childClassName} ${activeClassName}`.trim()
+// //       : childClassName;
+
+// //   return (
+// //     <Link {...props}>
+// //       {React.cloneElement(child, {
+// //         className: className || null
+// //       })}
+// //     </Link>
+// //   );
+// // };
+
+// // ActiveLink.propTypes = {
+// //   activeClassName: PropTypes.string.isRequired
+// // };
+
+// // export default ActiveLink;

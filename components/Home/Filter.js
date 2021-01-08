@@ -1,7 +1,7 @@
 const Filter = ({ method, isSelected, label, length, onCursor }) => {
   return (
     <button
-      className={`tw-link focus:outline-none ${
+      className={`flex flex-col items-center lg:flex-row lg:items-baseline tw-link focus:outline-none ${
         isSelected ? 'filter-btn-on' : ''
       }`}
       type="button"
