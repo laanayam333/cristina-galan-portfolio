@@ -1,20 +1,19 @@
-# Cristina Galán Portfolio
+# Portfalio Cristina Galán
 
-Click [here](https://cristinagalan.com/) to see the project.
+Haga click [aquí](https://cristinagalan.com/) para ver el proyecto.
 
-## Description
+## Descripción
 
-Portfolio website created for the photographer and audiovisual creator Cristina Galán.
+Portafolio web de la fotógrafa y realizadora audiovisual Cristina Galán.
 
-## Built With
+## Creado con
 
-* [Next JS](https://nextjs.org/)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Framer Motion](https://www.framer.com/api/motion)
-* [Prismic CMS](https://prismic.io/)
+- [Next JS](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/api/motion)
+- [Prismic CMS](https://prismic.io/)
 
-## Authors
+## Autores
 
-* **Ctrl-Z Studio** - [CtrlZ-Studio](https://github.com/CtrlZ-Studio)
-* **Luis Anaya** - [laanayam333](https://github.com/laanayam333)
-* **Carlos Kompier** - [ckompier](https://github.com/ckompier)
+- **Luis Anaya** - [laanayam333](https://github.com/laanayam333)
+- **Carlos Kompier** - [ckompier](https://github.com/ckompier)

@@ -82,16 +82,16 @@ const Footer = ({ onCursor }) => {
         <small className="text-xs lg:text-sm 2xl:text-base text-gray-400 dark:text-gray-700 tw-animation">
           © {year} Cristina Galán.{' '}
           <span>
-            Website by{' '}
+            Webs creada por{' '}
             <a
               className="italic"
               onMouseEnter={() => onCursor('tw-hovered')}
               onMouseLeave={onCursor}
-              href="https://github.com/CtrlZ-Studio"
+              href="https://luis-anaya-portfolio.vercel.app/"
               target="_blank"
               rel="noopener"
             >
-              Ctrl-Z Studio
+              Luis Anaya
             </a>
             .
           </span>

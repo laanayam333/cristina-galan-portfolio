@@ -74,6 +74,10 @@ export const getStaticProps = async () => {
   const tableData = aboutPageData.body.filter((elm) => elm.type === 'table');
 
   return {
-    props: { aboutPageData, tableData, clientsData }
+    props: {
+      aboutPageData,
+      tableData,
+      clientsData
+    }
   };
 };
