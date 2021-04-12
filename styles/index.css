@@ -164,7 +164,7 @@
   }
 
   .tw-cursor {
-    @apply hidden lg:block absolute top-0 left-0 w-8 h-8 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
+    @apply hidden lg:block absolute top-0 left-0 w-12 h-12 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
   }
 
   .tw-pointer {
@@ -173,7 +173,7 @@
 
   .tw-hovered {
     @apply bg-transparent !important;
-    @apply w-14 h-14 border-4 border-solid border-red-400;
+    @apply w-16 h-16 border-4 border-solid border-red-400;
   }
 
   .nav-open {
