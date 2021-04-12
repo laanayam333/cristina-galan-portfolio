@@ -82,7 +82,7 @@ const Footer = ({ onCursor }) => {
         <small className="text-xs lg:text-sm 2xl:text-base text-gray-400 dark:text-gray-700 tw-animation">
           © {year} Cristina Galán.{' '}
           <span>
-            Webs creada por{' '}
+            Web creada por{' '}
             <a
               className="italic"
               onMouseEnter={() => onCursor('tw-hovered')}
