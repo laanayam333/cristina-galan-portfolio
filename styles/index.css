@@ -1,239 +1,235 @@
 @tailwind base;
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  cursor: none;
-  scrollbar-width: none; /* Firefox */
-  -webkit-font-smoothing: antialiased;
-  -ms-overflow-style: none; /* IE and Edge */
-  scroll-behavior: smooth;
-
-  @apply w-full h-full overflow-x-hidden overscroll-none font-core leading-none text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
-}
-
-@keyframes ticker-kf {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-160rem, 0, 0);
-  }
-}
-
-::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-}
-
-@font-face {
-  font-family: 'League Gothic';
-  src: url('public/fonts/league/LeagueGothic-Condensed.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk';
-  src: url('public/fonts/aktiv/AktivGroteskCorp-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk';
-  src: url('public/fonts/aktiv/AktivGroteskCorp-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk';
-  src: url('public/fonts/aktiv/AktivGroteskCorp-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Aktiv Grotesk';
-  src: url('public/fonts/aktiv/AktivGroteskCorp-MediumItalic.woff2')
-    format('woff2');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap
-}
-
 @tailwind components;
-
-/*  //! GLOBAL !// */
-
-.tw-container-sm {
-  @apply px-5 lg:px-14 2xl:px-16;
-}
-
-.tw-container {
-  @apply px-10 lg:px-56 2xl:px-64;
-}
-
-.tw-separator-t-lg {
-  @apply mt-40 lg:mt-56 2xl:mt-64;
-}
-
-.tw-separator-t {
-  @apply mt-20 lg:mt-28 2xl:mt-32;
-}
-
-.tw-separator-t-sm {
-  @apply mt-10 lg:mt-14 2xl:mt-16;
-}
-
-.tw-separator-t-xs {
-  @apply mt-5 lg:mt-7 2xl:mt-8;
-}
-
-.tw-separator-t-xxs {
-  @apply mt-2.5 lg:mt-3.5 2xl:mt-4;
-}
-
-.tw-separator-b {
-  @apply mb-20 lg:mb-28 2xl:mb-32;
-}
-
-.tw-separator-b-sm {
-  @apply mb-10 lg:mb-14 2xl:mb-16;
-}
-
-.tw-separator-b-xs {
-  @apply mb-5 lg:mb-7 2xl:mb-8;
-}
-
-.tw-placeholder {
-  @apply bg-gray-100 dark:bg-gray-900 tw-animation;
-}
-
-.tw-page-title {
-  @apply font-heading text-11xl lg:text-13xl 2xl:text-14xl uppercase;
-}
-
-.tw-paragraph {
-  @apply flex flex-col space-y-5 lg:space-y-14 2xl:space-y-16 font-core text-base lg:text-xl 2xl:text-2xl leading-relaxed;
-}
-
-.tw-label {
-  @apply text-xs lg:text-base 2xl:text-lg font-bold italic uppercase leading-relaxed;
-}
-
-.tw-pair {
-  @apply flex flex-col tw-separator-t-xxs;
-}
-
-.tw-key {
-  @apply mr-0.5 lg:mr-1 2xl:mr-1.5 text-sm lg:text-lg 2xl:text-xl text-gray-400 dark:text-gray-700 leading-snug tw-animation;
-}
-
-.tw-value {
-  @apply mr-2 lg:mr-4 text-sm lg:text-lg 2xl:text-xl text-gray-700 dark:text-gray-400 leading-snug tw-animation;
-}
-
-.tw-subheading {
-  @apply text-4xl lg:text-6xl 2xl:text-7xl font-bold uppercase;
-}
-
-.tw-card-title {
-  @apply font-bold text-2xl lg:text-4xl 2xl:text-5xl uppercase;
-}
-
-.tw-card-text {
-  @apply font-core text-base lg:text-xl 2xl:text-2xl text-gray-700 dark:text-gray-400 tw-animation;
-}
-
-.tw-link {
-  @apply text-base lg:text-lg 2xl:text-xl text-gray-500 hover:text-red-400 tw-animation;
-}
-
-.tw-animation {
-  @apply transition duration-300 ease-in-out;
-}
-
-.tw-cursor {
-  @apply hidden lg:block absolute top-0 left-0 w-8 h-8 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
-}
-
-.tw-pointer {
-  @apply border-4 border-solid border-black dark:border-white !important;
-}
-
-.tw-hovered {
-  @apply bg-transparent !important;
-  @apply w-14 h-14 border-4 border-solid border-red-400;
-}
-
-.nav-open {
-  @apply bg-black dark:bg-white;
-}
-
-.selected {
-  @apply text-red-400;
-}
-
-/*  //!  !// */
-
-.about-row {
-  @apply px-1 py-4 lg:px-3 lg:py-6 2xl:px-4 2xl:py-7 font-core text-xs lg:text-base 2xl:text-lg break-words;
-}
-
-.filter-btn-off {
-  @apply text-gray-700 dark:text-gray-400;
-}
-
-.filter-btn-on {
-  @apply text-red-400;
-}
-
-.body-lock {
-  @apply overflow-y-hidden;
-}
-
-.slideshow-arrow {
-  top: calc(50% - 20px);
-
-  @apply absolute bg-white rounded-lg w-10 h-10 flex justify-center items-center select-none  text-xl z-50;
-}
-
-.expo-card {
-  flex: 0 0 40%;
-  max-width: 40%;
-
-  @apply relative p-6 h-96;
-}
-
-.player-wrapper {
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
-
-  @apply relative;
-}
-
-.react-player {
-  @apply absolute top-0 left-0;
-}
-
-/* Stop purging. */
-
-/* Start purging... */
 @tailwind utilities;
 
-.writing-mode-vertical-rl {
-  writing-mode: vertical-rl;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    cursor: none;
+    scrollbar-width: none; /* Firefox */
+    -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-behavior: smooth;
+
+    @apply w-full h-full overflow-x-hidden overscroll-none font-core leading-none text-base text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 ease-in-out;
+  }
+
+  @keyframes ticker-kf {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-160rem, 0, 0);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  }
+
+  @font-face {
+    font-family: 'League Gothic';
+    src: url('public/fonts/league/LeagueGothic-Condensed.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('public/fonts/aktiv/AktivGroteskCorp-Regular.woff2')
+      format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('public/fonts/aktiv/AktivGroteskCorp-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('public/fonts/aktiv/AktivGroteskCorp-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('public/fonts/aktiv/AktivGroteskCorp-MediumItalic.woff2')
+      format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
 }
 
-.text-orientation-mixed {
-  text-orientation: mixed;
+@layer components {
+  .tw-container-sm {
+    @apply px-5 lg:px-14 2xl:px-16;
+  }
+
+  .tw-container {
+    @apply px-10 lg:px-56 2xl:px-64;
+  }
+
+  .tw-separator-t-lg {
+    @apply mt-40 lg:mt-56 2xl:mt-64;
+  }
+
+  .tw-separator-t {
+    @apply mt-20 lg:mt-28 2xl:mt-32;
+  }
+
+  .tw-separator-t-sm {
+    @apply mt-10 lg:mt-14 2xl:mt-16;
+  }
+
+  .tw-separator-t-xs {
+    @apply mt-5 lg:mt-7 2xl:mt-8;
+  }
+
+  .tw-separator-t-xxs {
+    @apply mt-2.5 lg:mt-3.5 2xl:mt-4;
+  }
+
+  .tw-separator-b {
+    @apply mb-20 lg:mb-28 2xl:mb-32;
+  }
+
+  .tw-separator-b-sm {
+    @apply mb-10 lg:mb-14 2xl:mb-16;
+  }
+
+  .tw-separator-b-xs {
+    @apply mb-5 lg:mb-7 2xl:mb-8;
+  }
+
+  .tw-placeholder {
+    @apply bg-gray-100 dark:bg-gray-900 tw-animation;
+  }
+
+  .tw-page-title {
+    @apply font-heading text-11xl lg:text-13xl 2xl:text-14xl uppercase;
+  }
+
+  .tw-paragraph {
+    @apply flex flex-col space-y-5 lg:space-y-14 2xl:space-y-16 font-core text-base lg:text-xl 2xl:text-2xl leading-relaxed;
+  }
+
+  .tw-label {
+    @apply text-xs lg:text-base 2xl:text-lg font-bold italic uppercase leading-relaxed;
+  }
+
+  .tw-pair {
+    @apply flex flex-col tw-separator-t-xxs;
+  }
+
+  .tw-key {
+    @apply mr-0.5 lg:mr-1 2xl:mr-1.5 text-sm lg:text-lg 2xl:text-xl text-gray-400 dark:text-gray-700 leading-snug tw-animation;
+  }
+
+  .tw-value {
+    @apply mr-2 lg:mr-4 text-sm lg:text-lg 2xl:text-xl text-gray-700 dark:text-gray-400 leading-snug tw-animation;
+  }
+
+  .tw-subheading {
+    @apply text-4xl lg:text-6xl 2xl:text-7xl font-bold uppercase;
+  }
+
+  .tw-card-title {
+    @apply font-bold text-2xl lg:text-4xl 2xl:text-5xl uppercase;
+  }
+
+  .tw-card-text {
+    @apply font-core text-base lg:text-xl 2xl:text-2xl text-gray-700 dark:text-gray-400 tw-animation;
+  }
+
+  .tw-link {
+    @apply text-base lg:text-lg 2xl:text-xl text-gray-500 hover:text-red-400 tw-animation;
+  }
+
+  .tw-animation {
+    @apply transition duration-300 ease-in-out;
+  }
+
+  .tw-cursor {
+    @apply hidden lg:block absolute top-0 left-0 w-8 h-8 bg-red-400 rounded-full transform -translate-x-2/4 -translate-y-2/4 transition duration-100 ease-in-out pointer-events-none z-999;
+  }
+
+  .tw-pointer {
+    @apply border-4 border-solid border-black dark:border-white !important;
+  }
+
+  .tw-hovered {
+    @apply bg-transparent !important;
+    @apply w-14 h-14 border-4 border-solid border-red-400;
+  }
+
+  .nav-open {
+    @apply bg-black dark:bg-white;
+  }
+
+  .selected {
+    @apply text-red-400;
+  }
+
+  .about-row {
+    @apply px-1 py-4 lg:px-3 lg:py-6 2xl:px-4 2xl:py-7 font-core text-xs lg:text-base 2xl:text-lg break-words;
+  }
+
+  .filter-btn-off {
+    @apply text-gray-700 dark:text-gray-400;
+  }
+
+  .filter-btn-on {
+    @apply text-red-400;
+  }
+
+  .body-lock {
+    @apply overflow-y-hidden;
+  }
+
+  .slideshow-arrow {
+    top: calc(50% - 20px);
+
+    @apply absolute bg-white rounded-lg w-10 h-10 flex justify-center items-center select-none  text-xl z-50;
+  }
+
+  .expo-card {
+    flex: 0 0 40%;
+    max-width: 40%;
+
+    @apply relative p-6 h-96;
+  }
+
+  .player-wrapper {
+    padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+
+    @apply relative;
+  }
+
+  .react-player {
+    @apply absolute top-0 left-0;
+  }
 }
 
-/* Stop purging. */
+@layer utilities {
+  .writing-mode-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .text-orientation-mixed {
+    text-orientation: mixed;
+  }
+}
